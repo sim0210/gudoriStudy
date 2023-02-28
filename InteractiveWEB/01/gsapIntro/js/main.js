@@ -16,9 +16,8 @@ gsap.to(".earth", { opacity: 1});
 
 let openingTl = gsap.timeline();
     openingTl.to('.img1', { rotation : 360, scale : 2.0, delay : 2, duration: 2.5 })
-    .to("#earth", {opacity : 1, x : -368, duration: 4.5, scale :0.3, } )
-    .to("#earth", {opacity : 0, x : 368, duration: 0, scale :0.3,})
-    .to("#earth", {opacity : 1, x : -368, duration: 4.5, scale :0.3, } )
+    .to("#earth", { opacity :1, duration: 8, rotationY: 360, rotateX : 360, transformOrigin: "50% 50% -400" } )
+
 
 
     // openingTl.to("#earth", {
