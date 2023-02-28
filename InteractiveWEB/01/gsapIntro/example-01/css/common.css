@@ -44,10 +44,21 @@ section .content .mainEarth {
           transform: translate(-50%, 0%) scale(0.1);
 }
 
+section .content .earthWrap {
+  position: absolute;
+  left: 53%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 100%;
+  width: 1322px;
+  z-index: 2;
+}
+
 section .content .main--1 {
   position: absolute;
   z-index: 1;
-  left: 16%;
+  left: -4%;
   top: 22%;
   /*transform: translate(-50%,-50%); */
   opacity: 0;
@@ -56,7 +67,7 @@ section .content .main--1 {
 section .content .main--o {
   position: absolute;
   z-index: 1;
-  left: 23%;
+  left: 2%;
   top: 2%;
   opacity: 0;
 }
@@ -64,15 +75,15 @@ section .content .main--o {
 section .content .main--a {
   position: absolute;
   z-index: 1;
-  left: 29%;
-  top: 46%;
+  left: 10%;
+  top: 37%;
   opacity: 0;
 }
 
 section .content .main--b {
   position: absolute;
   z-index: 1;
-  left: 18%;
+  left: 6%;
   top: 61%;
   opacity: 0;
 }
@@ -80,7 +91,7 @@ section .content .main--b {
 section .content .main--e {
   position: absolute;
   z-index: 1;
-  left: 21%;
+  left: 5%;
   top: 2%;
   opacity: 0;
 }
@@ -88,7 +99,7 @@ section .content .main--e {
 section .content .main--l {
   position: absolute;
   z-index: 1;
-  left: 10%;
+  left: -15%;
   top: 47%;
   opacity: 0;
 }
