@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>gsap</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="./css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./css/common.css" />
+    <script type="text/javascript" src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script type="text/javascript" src="https://assets.codepen.io/16327/ScrollSmoother.min.js"></script>
+    
+</head>
+
+
+<body>
+  <div class="wrap">
+
+    <section class="first">
+      <!-- <div class="textBox">
+        <h1>GLOBAL</h1>
+        <h1>GRAVITY</h1>
+        <h1>TOGETHER! TOGETHER!!!</h1>
+      </div>
+  
+      <div class="textBox2">
+        <h1 class="textYellow">HIHI</h1>
+        <h1 class="textNavy">HELLO</h1>
+      </div> -->
+  
+      <img class="img1" src="https://www.dabeeo.com/common/web/images/earth.png" />
+
+      <svg id="earth" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:ns1="http://sozi.baierouge.fr" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 760 760" > <defs > <radialGradient id="sea" > <stop stop-color="#1c546f" offset=".5" /> <stop stop-color="#123a51" offset="1" /> </radialGradient > <radialGradient id="land" gradientUnits="userSpaceOnUse" cy="50" cx="440" r="1036" > <stop stop-color="#eaeaec" offset=".05" /> <stop stop-color="#a2916a" offset=".1" /> <stop stop-color="#898f4b" offset=".14" /> <stop stop-color="#a19767" offset=".25" /> <stop stop-color="#cbb38d" offset=".32" /> <stop stop-color="#cbb38d" offset=".35" /> <stop stop-color="#727a42" offset=".52" /> <stop stop-color="#e54a82" offset="1" /> </radialGradient > </defs > <path d="m760 380a380 380 0 1 1 -760 0 380 380 0 1 1 760 0z" fill="url(#sea)" /> <path d="m157 102c31 0 39-2 60-11 0 116-36 92-36 161 20 8 2 53 31 82-6-20-10-40-10-61 12 49 30 51 30 78 0 41 111 49 111 78 14 20 42-1 56 26-9 31-25 32-25 68 0 33 64 70 64 86 0 30-41 118-41 118l24 6c45-69 180-84 222-239-105 0-70-74-231-74l-10 25c-14-22-33-2-46-22l4-28-32-4 13-36-22 3c-1 11-8 17-21 17-16 0-21-15-21-36 0-26 8-39 67-39 17 0 21 7 21 21l15 17c0-31-7-28-7-39 55-38 3-59 94-97-18 0-21-5-21-16-7 0-18 4-26 13 14-31 38-13 54-32-19-24-61-47-85-47l-7 59c-10-19-28-31-54-41l48-43c-78 0-113-19-113-41-71 11-57 39-106 48zm47-48 28 2c19-17 43-29 75-39-36 7-71 20-103 37zm94 16 9 15 32 6-26-29zm22-12 5 8h15l3-13zm5 143 25-14c14 30 16 8 32 25l-13 12-5-15c-10 0-16 8-16 21h-5c0-29 0-29-18-29zm12-128 13 17 10-18zm8-7 35 5 15-27c-22 0-38 7-50 22zm8 281 41 21 24-2c-21-15-39-19-65-19zm8-264c25 4 37 8 37 27l27 14v-22c-11-14-36-27-59-28zm29-21c51 0 50 59 98 59l-2-50-56-33c-22 0-31 5-40 24zm30 304 12 15 19-7c28 0 44 8 48 29 0-26-26-37-79-37zm47-175 29 5c-4-14-10-21-24-25zm23-165c20 38 108 40 130 108l23 19-12 10c14 20 25 29 40 29l-28-73c-42-42-94-75-153-93zm14 58 22 10c0-10-4-17-13-17zm63 7c3 17 26 40 42 40v-16zm108 66c0 99 13 223 75 223 0-84-28-161-75-223z" fill="url(#land)" /> <metadata > <rdf:RDF > <cc:Work > <dc:format >image/svg+xml</dc:format > <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" /> <cc:license rdf:resource="http://creativecommons.org/licenses/publicdomain/" /> <dc:publisher > <cc:Agent rdf:about="http://openclipart.org/" > <dc:title >Openclipart</dc:title > </cc:Agent > </dc:publisher > <dc:title >Simple Globe facing America</dc:title > <dc:date >2013-11-19T07:48:19</dc:date > <dc:description >Manually traced outlines of the continents, originally created for a font. Fewer than 200 control points, all rounded to integers. Path data is about 1KB. I recommend using a transformation matrix to scale or transform the outlines.</dc:description > <dc:source >https://openclipart.org/detail/188898/simple-globe-facing-america-by-sev-188898</dc:source > <dc:creator > <cc:Agent > <dc:title >Sev</dc:title > </cc:Agent > </dc:creator > <dc:subject > <rdf:Bag > <rdf:li >america</rdf:li > <rdf:li >earth</rdf:li > <rdf:li >globe</rdf:li > <rdf:li >planet</rdf:li > </rdf:Bag > </dc:subject > </cc:Work > <cc:License rdf:about="http://creativecommons.org/licenses/publicdomain/" > <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction" /> <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution" /> <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks" /> </cc:License > </rdf:RDF > </metadata > </svg >
+    </section>
+  
+    <section class="second">
+    </section>
+  </div>
+
+
+  <script type="text/javascript" src="./js/main.js"></script>
+</body>
+</html>
