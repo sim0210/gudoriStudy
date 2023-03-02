@@ -1,77 +1,152 @@
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
 }
 
 section {
-  opacity: 0;
+  opacity: 1;
   background-color: #000010;
   width: 100%;
   height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  align-items: center;
+  flex-direction: column;
 }
-
 section .content {
   min-width: 1400px;
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   position: relative;
 }
-
 section .content .mainEarth {
   opacity: 1;
   position: absolute;
   left: 50%;
-  top: -64%;
-  -webkit-transform: translate(-50%, 0%) scale(0.1);
-          transform: translate(-50%, 0%) scale(0.1);
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  transform-origin: 50% 50%;
 }
-
 section .content .earthWrap {
   position: absolute;
-  left: 53%;
+  left: 52%;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  height: 100%;
-  width: 1322px;
+  transform: translate(-50%, -50%);
+  height: 1268px;
+  width: 1285px;
+  z-index: 2;
   z-index: 2;
 }
-
+section .content .earthWrap--backgroundTitle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+section .content .earthWrap--text1 {
+  position: absolute;
+  left: 50%;
+  top: 32%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+section .content .earthWrap--playOn {
+  position: absolute;
+  width: 765px;
+  height: 118px;
+  left: 50%;
+  top: 44%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+section .content .earthWrap--playOn i {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 43%;
+  background: url(../images/PLAYON.png) no-repeat;
+}
+section .content .earthWrap--playOn .object1 {
+  width: 30px;
+  height: 100%;
+  background-position: 0 0;
+  opacity: 0;
+}
+section .content .earthWrap--playOn .object2 {
+  width: 30px;
+  height: 100%;
+  background-position: -737px 0;
+  opacity: 0;
+}
+section .content .earthWrap--playOn .poring {
+  width: 124px;
+  height: 100%;
+  background-position: -491px 0;
+  opacity: 0;
+  scale: 0; /* transition: 0.5s all;*/
+}
+section .content .earthWrap--playOn .textP {
+  width: 98px;
+  height: 100%;
+  background-position: -38px 0;
+  opacity: 0;
+}
+section .content .earthWrap--playOn .textL {
+  width: 98px;
+  height: 100%;
+  background-position: -146px 0;
+  opacity: 0;
+}
+section .content .earthWrap--playOn .textA {
+  width: 98px;
+  height: 100%;
+  background-position: -251px 0;
+  opacity: 0;
+}
+section .content .earthWrap--playOn .textY {
+  width: 98px;
+  height: 100%;
+  background-position: -356px 0;
+  left: 57%;
+  opacity: 0;
+}
+section .content .earthWrap--playOn .textN {
+  width: 100px;
+  height: 100%;
+  background-position: -629px 0;
+  opacity: 0;
+}
+section .content .earthWrap--with {
+  position: absolute;
+  left: 50%;
+  top: 54%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+section .content .earthWrap--gravity {
+  position: absolute;
+  left: 50%;
+  top: 64%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
 section .content .main--1 {
   position: absolute;
   z-index: 1;
   left: -4%;
-  top: 22%;
-  /*transform: translate(-50%,-50%); */
+  top: 22%; /*transform: translate(-50%,-50%); */
   opacity: 0;
 }
-
 section .content .main--o {
   position: absolute;
   z-index: 1;
-  left: 2%;
-  top: 2%;
+  left: 12%;
+  top: 9%;
   opacity: 0;
 }
-
 section .content .main--a {
   position: absolute;
   z-index: 1;
@@ -79,7 +154,6 @@ section .content .main--a {
   top: 37%;
   opacity: 0;
 }
-
 section .content .main--b {
   position: absolute;
   z-index: 1;
@@ -87,7 +161,6 @@ section .content .main--b {
   top: 61%;
   opacity: 0;
 }
-
 section .content .main--e {
   position: absolute;
   z-index: 1;
@@ -95,12 +168,18 @@ section .content .main--e {
   top: 2%;
   opacity: 0;
 }
-
 section .content .main--l {
   position: absolute;
   z-index: 1;
   left: -15%;
   top: 47%;
+  opacity: 0;
+}
+section .content .main--j {
+  position: absolute;
+  z-index: 1;
+  right: 9%;
+  top: 20%;
   opacity: 0;
 }
 

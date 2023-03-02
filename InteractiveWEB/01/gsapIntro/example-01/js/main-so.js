@@ -19,7 +19,7 @@ function init(){
   master.add( FUNCTION_openingTL() );
   master.add( FUNCTION_poringMoving() ) ;
   // master.add( FUNCTION_mainScrollTrigger() ) ;
-  // master.add( FUNCTION_openingTL_nextStep() );
+  master.add( FUNCTION_openingTL_nextStep() );
   // master.add( FUNCTION_openingTL({duration : 1}).reverse() );
   
 
@@ -30,22 +30,24 @@ function init(){
              .to(".mainEarth", { scale : 1, /*rotation : 360,*/ duration: 2, /* ease: "slow(0.7, 0.7, false)" */ })
               //  .to(".box", { duration: 0.2, stagger: {each: 0.2, from: "center", ease: "power2.inOut" } },"<")
 
-              .to(".earthWrap--backgroundTitle", {  opacity: 1, duration : 2.5,},"<+=2")
+              .to(".box.main--1", {  opacity: 1, motionPath : PATH_LIST.main_1_path , duration : 0.9, },"<+=0.5")
+              .to(".box.main--o", {  opacity: 1, motionPath : PATH_LIST.main_o_path , duration : 0.9,},"<+=0.3")
+              .to(".box.main--a", {  opacity: 1, motionPath : PATH_LIST.main_a_path , duration : 0.9,},"<+=0.2")
+              .to(".box.main--b", {  opacity: 1, motionPath : PATH_LIST.main_b_path , duration : 0.9,},"<+=0.1")
+              .to(".box.main--l", {  opacity: 1, motionPath : PATH_LIST.main_l_path , duration : 0.9,},"<+=0.2")
+              .to(".box.main--e", {  opacity: 1, motionPath : PATH_LIST.main_e_path , duration : 0.9,},"<+=0.1")
+              
+
+              .to(".earthWrap--backgroundTitle", {  opacity: 1, duration : 2.5,},"<")
               // .to(".earthWrap--text1", {  opacity: 1, y:50, duration : 0.8, ease: "power1.inOut" },"<-=2.3") // 좀 빠른 버전
-              .to(".earthWrap--text1", {  opacity: 1, y:50, duration : 0.8, ease: "power1.inOut" },"<-=0.3")
+              .to(".earthWrap--text1", {  opacity: 1, y:50, duration : 0.8, ease: "power1.inOut" },"<")
+
+              .to(".earthWrap--with", {  opacity: 1, y:50, duration : 0.8, ease: "power1.inOut" },"<")
+              .to(".earthWrap--gravity", {  opacity: 1, y:50, duration : 0.8, ease: "power1.inOut" },"<")
+
               .set(".earthWrap--playOn", {  opacity: 1, y:50, duration : 0.8, ease: "power1.inOut" },"<+=0.6")
               .add(FUNCTION_playonTL,"<")
-              .to(".earthWrap--with", {  opacity: 1, y:50, duration : 0.8, ease: "power1.inOut" },"<+=3")
-              .to(".earthWrap--gravity", {  opacity: 1, y:50, duration : 0.8, ease: "power1.inOut" })
-
-
-             .to(".box.main--1", {  opacity: 1, motionPath : PATH_LIST.main_1_path , duration : 0.9, },"<+=0.5")
-             .to(".box.main--o", {  opacity: 1, motionPath : PATH_LIST.main_o_path , duration : 0.9,},"<+=0.3")
-             .to(".box.main--a", {  opacity: 1, motionPath : PATH_LIST.main_a_path , duration : 0.9,},"<+=0.2")
-             .to(".box.main--b", {  opacity: 1, motionPath : PATH_LIST.main_b_path , duration : 0.9,},"<+=0.1")
-             .to(".box.main--l", {  opacity: 1, motionPath : PATH_LIST.main_l_path , duration : 0.9,},"<+=0.2")
-             .to(".box.main--e", {  opacity: 1, motionPath : PATH_LIST.main_e_path , duration : 0.9,},"<+=0.1")
-             
+            
 
              .to(".box.main--j", {  opacity: 1, motionPath : PATH_LIST.main_o_path , duration : 0.9,},"<+=0.1")
              
