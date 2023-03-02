@@ -1,5 +1,6 @@
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
 }
 
@@ -8,178 +9,474 @@ section {
   background-color: #000010;
   width: 100%;
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
+
 section .content {
   min-width: 1400px;
   width: 100%;
   height: 100%;
   margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
 }
+
 section .content .mainEarth {
-  opacity: 1;
+  opacity: 0.4;
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%) scale(0.1);
-  transform-origin: 50% 50%;
+  -webkit-transform: translate(-50%, -50%) scale(0.1);
+          transform: translate(-50%, -50%) scale(0.1);
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
 }
+
 section .content .earthWrap {
   position: absolute;
-  left: 52%;
+  left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   height: 1268px;
   width: 1285px;
   z-index: 2;
   z-index: 2;
 }
+
 section .content .earthWrap--backgroundTitle {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   opacity: 0;
 }
+
 section .content .earthWrap--text1 {
   position: absolute;
   left: 50%;
   top: 32%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   opacity: 0;
 }
+
 section .content .earthWrap--playOn {
   position: absolute;
-  width: 765px;
+  width: 800px;
   height: 118px;
   left: 50%;
   top: 44%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   opacity: 0;
+  text-align: center;
 }
+
 section .content .earthWrap--playOn i {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 43%;
+  content: '';
+  position: relative;
+  display: inline-block;
   background: url(../images/PLAYON.png) no-repeat;
 }
+
 section .content .earthWrap--playOn .object1 {
   width: 30px;
   height: 100%;
+  display: none;
   background-position: 0 0;
-  opacity: 0;
+  opacity: 1;
 }
+
 section .content .earthWrap--playOn .object2 {
   width: 30px;
   height: 100%;
+  display: none;
   background-position: -737px 0;
-  opacity: 0;
+  opacity: 1;
+  margin-right: 15px;
 }
+
 section .content .earthWrap--playOn .poring {
   width: 124px;
   height: 100%;
+  display: none;
   background-position: -491px 0;
-  opacity: 0;
-  scale: 0; /* transition: 0.5s all;*/
+  opacity: 1;
+  scale: 1;
 }
+
 section .content .earthWrap--playOn .textP {
   width: 98px;
   height: 100%;
+  display: none;
   background-position: -38px 0;
-  opacity: 0;
+  opacity: 1;
 }
+
 section .content .earthWrap--playOn .textL {
   width: 98px;
   height: 100%;
+  display: none;
   background-position: -146px 0;
-  opacity: 0;
+  opacity: 1;
 }
+
 section .content .earthWrap--playOn .textA {
   width: 98px;
   height: 100%;
+  display: none;
   background-position: -251px 0;
-  opacity: 0;
+  opacity: 1;
 }
+
 section .content .earthWrap--playOn .textY {
   width: 98px;
   height: 100%;
+  display: none;
   background-position: -356px 0;
-  left: 57%;
-  opacity: 0;
+  opacity: 1;
+  margin-right: 15px;
 }
+
 section .content .earthWrap--playOn .textN {
   width: 100px;
   height: 100%;
+  display: none;
   background-position: -629px 0;
-  opacity: 0;
+  opacity: 1;
 }
+
+section .content .earthWrap--playOn .cursor {
+  font-size: 80px;
+  color: #fff;
+  font-weight: bold;
+}
+
 section .content .earthWrap--with {
   position: absolute;
   left: 50%;
   top: 54%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   opacity: 0;
 }
+
 section .content .earthWrap--gravity {
   position: absolute;
   left: 50%;
   top: 64%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   opacity: 0;
 }
+
 section .content .main--1 {
+  -webkit-transform: scale(0);
+          transform: scale(0);
   position: absolute;
   z-index: 1;
   left: -4%;
-  top: 22%; /*transform: translate(-50%,-50%); */
+  top: 22%;
   opacity: 0;
 }
+
 section .content .main--o {
+  -webkit-transform: scale(0);
+          transform: scale(0);
   position: absolute;
   z-index: 1;
   left: 12%;
   top: 9%;
   opacity: 0;
 }
+
 section .content .main--a {
+  -webkit-transform: scale(0);
+          transform: scale(0);
   position: absolute;
   z-index: 1;
   left: 10%;
   top: 37%;
   opacity: 0;
 }
+
 section .content .main--b {
+  -webkit-transform: scale(0);
+          transform: scale(0);
   position: absolute;
   z-index: 1;
   left: 6%;
   top: 61%;
   opacity: 0;
 }
+
 section .content .main--e {
+  -webkit-transform: scale(0);
+          transform: scale(0);
   position: absolute;
   z-index: 1;
   left: 5%;
   top: 2%;
   opacity: 0;
 }
+
 section .content .main--l {
+  -webkit-transform: scale(0);
+          transform: scale(0);
   position: absolute;
   z-index: 1;
   left: -15%;
   top: 47%;
   opacity: 0;
 }
-section .content .main--j {
+
+section .content .main--f {
+  -webkit-transform: scale(0);
+          transform: scale(0);
   position: absolute;
   z-index: 1;
-  right: 9%;
+  right: 48%;
+  top: 10%;
+  opacity: 0;
+}
+
+section .content .main--p {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  position: absolute;
+  z-index: 1;
+  right: 63%;
+  top: 78%;
+  opacity: 0;
+}
+
+section .content .main--j {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  position: absolute;
+  z-index: 1;
+  right: 11%;
+  top: 9%;
+  opacity: 0;
+}
+
+section .content .main--m {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  position: absolute;
+  z-index: 1;
+  right: 31%;
+  top: 81%;
+  opacity: 0;
+}
+
+section .content .main--z {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  position: absolute;
+  z-index: 1;
+  right: 8%;
+  top: 31%;
+  opacity: 0;
+}
+
+section .content .main--k {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  position: absolute;
+  z-index: 1;
+  right: 11%;
+  top: 15%;
+  opacity: 0;
+}
+
+section .content .main--d {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  position: absolute;
+  z-index: 1;
+  right: -5%;
+  top: 19%;
+  opacity: 0;
+}
+
+section .content .main--x {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  position: absolute;
+  z-index: 1;
+  right: -4%;
+  top: 66%;
+  opacity: 0;
+}
+
+section .content .main--c {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  position: absolute;
+  z-index: 1;
+  right: 3%;
+  top: 68%;
+  opacity: 0;
+}
+
+section .content .main--t {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  position: absolute;
+  z-index: 1;
+  right: -10%;
+  top: 63%;
+  opacity: 0;
+}
+
+section .content .main--obj1 {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  position: absolute;
+  z-index: 1;
+  left: -10%;
   top: 20%;
+  opacity: 0;
+}
+
+section .content .main--obj2 {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  position: absolute;
+  z-index: 1;
+  top: 37%;
+  left: -5%;
+  opacity: 0;
+}
+
+section .content .main--obj3 {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  position: absolute;
+  z-index: 1;
+  left: -10%;
+  top: 54%;
+  opacity: 0;
+}
+
+section .content .main--obj4 {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  position: absolute;
+  z-index: 1;
+  top: 62%;
+  left: -15%;
+  opacity: 0;
+}
+
+section .content .main--obj5 {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  position: absolute;
+  z-index: 1;
+  left: 5%;
+  top: 76%;
+  opacity: 0;
+}
+
+section .content .main--obj6 {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  position: absolute;
+  z-index: 1;
+  left: 7%;
+  top: 52%;
+  opacity: 0;
+}
+
+section .content .main--obj7 {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  position: absolute;
+  z-index: 1;
+  top: 79%;
+  left: 26%;
+  opacity: 0;
+}
+
+section .content .main--obj8 {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  position: absolute;
+  z-index: 1;
+  top: 19%;
+  left: 74.284%;
+  opacity: 0;
+  -webkit-filter: sepia(100%) hue-rotate(121deg) saturate(400%);
+          filter: sepia(100%) hue-rotate(121deg) saturate(400%);
+}
+
+section .content .main--obj9 {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  position: absolute;
+  z-index: 1;
+  top: 46%;
+  left: 93.3774%;
+  opacity: 0;
+}
+
+section .content .main--obj10 {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  position: absolute;
+  z-index: 1;
+  top: 31%;
+  left: 100.8988%;
+  opacity: 0;
+}
+
+section .content .main--obj11 {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  position: absolute;
+  z-index: 1;
+  top: 62%;
+  left: 89.0973%;
+  opacity: 0;
+  -webkit-filter: sepia(100%) hue-rotate(121deg) saturate(400%);
+          filter: sepia(100%) hue-rotate(121deg) saturate(400%);
+}
+
+section .content .main--obj12 {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  position: absolute;
+  z-index: 1;
+  top: 43%;
+  left: 101.4319%;
+  opacity: 0;
+}
+
+section .content .main--obj13 {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  position: absolute;
+  z-index: 1;
+  top: 48%;
+  left: 103.821%;
   opacity: 0;
 }
 

@@ -43,49 +43,21 @@
               <img class="box main--b" src="images/B.png" alt="이미지">
 
 
-              <img class="box main--f" src="images/F.png" alt="이미지">
-              <img class="box main--p" src="images/P.png" alt="이미지">
               <img class="box main--j" src="images/J.png" alt="이미지">
-              <img class="box main--m" src="images/M.png" alt="이미지">
-              <img class="box main--z" src="images/Z.png" alt="이미지">              
-              <img class="box main--k" src="images/K.png" alt="이미지">
-              <img class="box main--d" src="images/D.png" alt="이미지">
-              <img class="box main--x" src="images/X copy 4.png" alt="이미지">
-              <img class="box main--c" src="images/C.png" alt="이미지">
-              <img class="box main--t" src="images/T.png" alt="이미지">
-              
-              
-              <img class="box main--obj1" src="images/main-obj1.png" alt="이미지">
-              <img class="box main--obj2" src="images/main-obj2.png" alt="이미지">
-              <img class="box main--obj3" src="images/main-obj3.png" alt="이미지">
-              <img class="box main--obj4" src="images/main-obj4.png" alt="이미지">
-              <img class="box main--obj5" src="images/main-obj5.png" alt="이미지">
-              <img class="box main--obj6" src="images/main-obj6.png" alt="이미지">
-              <img class="box main--obj7" src="images/main-obj7.png" alt="이미지">
-              
-                            
-              <img class="box main--obj8" src="images/main-obj8.png" alt="이미지">
-              <img class="box main--obj9" src="images/main-obj9.png" alt="이미지">
-              <img class="box main--obj10" src="images/main-obj10.png" alt="이미지">
-              <img class="box main--obj11" src="images/main-obj11.png" alt="이미지">
-              <img class="box main--obj12" src="images/main-obj12.png" alt="이미지">
-              <img class="box main--obj13" src="images/main-obj13.png" alt="이미지">
-
-
             </div>
                                                                                            
              
               <img class="earthWrap--backgroundTitle" src="images/tit-backgroundTitle.png" alt="backgroundTitle">
               <img class="earthWrap--text1" src="images/EXPERIENCE.png" alt="EXPERIENCE">
               <div class="earthWrap--playOn">  
-                <i class="object1"></i>
                 <i class="textP"></i>
                 <i class="textL"></i>
                 <i class="textA"></i>
                 <i class="textY"></i>
+                <i class="object1"></i>
                 <i class="poring"></i>
-                <i class="textN"></i>
                 <i class="object2"></i>
+                <i class="textN"></i>
                 <span class="cursor">_</span>
    
               </div>

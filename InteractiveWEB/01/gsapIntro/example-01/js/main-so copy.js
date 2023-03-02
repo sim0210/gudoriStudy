@@ -18,7 +18,7 @@ function init(){
   const master = gsap.timeline();
   master.add( FUNCTION_openingTL() );
   // master.add( FUNCTION_poringMoving() ) ;
-  master.add( FUNCTION_mainScrollTrigger() ) ;
+  // master.add( FUNCTION_mainScrollTrigger() ) ;
   // master.add( FUNCTION_openingTL_nextStep() );
   // master.add( FUNCTION_openingTL({duration : 1}).reverse() );
   
@@ -26,12 +26,13 @@ function init(){
 
   function FUNCTION_openingTL(){
     let openingTL = gsap.timeline();
-    openingTL.to("section.main", { opacity: 1, duration: 0.5, ease: "power4.in" })  
-             .to(".mainEarth", { scale : 1, opacity: 1, /*rotation : 360,*/ duration: 0.5, /* ease: "slow(0.7, 0.7, false)" */ })
+    openingTL.to("section.main", { opacity: 1, duration: 1 })  
+             .to(".mainEarth", { scale : 1, /*rotation : 360,*/ duration: 1.5, /* ease: "slow(0.7, 0.7, false)" */ })
               //  .to(".box", { duration: 0.2, stagger: {each: 0.2, from: "center", ease: "power2.inOut" } },"<")
 
-              .to(".box", {  opacity: 1, scale : 1, ease:"bounce.in", duration : 0.5, stagger: { grid: [7,15], from: "center", amount: 1 } } ,"<-=0.2") // 튀어나옴
-              // .from(".box", { opacity: 0, left:"50%", top:"50%", scale : 0, ease:"bounce.in", duration : 1.5, stagger: {   amount: 1.2 } })  // 흩뿌림
+              .to(".box", {  opacity: 1, scale : 1, ease:"bounce.in", duration : 1.5, stagger: { grid: [7,15], from: "center", amount: 1.5 } }) // 튀어나옴
+              //.from(".box", { opacity: 0, left:"50%", top:"50%", scale : 0, ease:"bounce.in", duration : 1.5, stagger: {   amount: 1.2 } })  // 흩뿌림
+
 
               // .to(".box.main--o", {  opacity: 1, motionPath : PATH_LIST.main_o_path , ease:"power4.out", duration : 1.4,},"<+=0.3")
               // .to(".box.main--a", {  opacity: 1, motionPath : PATH_LIST.main_a_path , ease:"power4.out", duration : 1.4,},"<+=0.2")
@@ -39,18 +40,19 @@ function init(){
               // .to(".box.main--l", {  opacity: 1, motionPath : PATH_LIST.main_l_path , ease:"power4.out", duration : 1.4,},"<+=0.2")
               // .to(".box.main--e", {  opacity: 1, motionPath : PATH_LIST.main_e_path , ease:"power4.out", duration : 1.4,},"<+=0.1")
               
-              .to(".earthWrap--text1", {  opacity: 1, y:50, duration : 0.8, ease: "power1.inOut" },"<+=0.3")
-
-              .to(".earthWrap--with", {  opacity: 1, y:50, duration : 0.8, ease: "power1.inOut" },"<+=0.2")
-              .to(".earthWrap--gravity", {  opacity: 1, y:50, duration : 0.8, ease: "power1.inOut" },"<+=0.1")
 
               .to(".earthWrap--backgroundTitle", {  opacity: 1, duration : 2.5,},"<")
               // .to(".earthWrap--text1", {  opacity: 1, y:50, duration : 0.8, ease: "power1.inOut" },"<-=2.3") // 좀 빠른 버전
+              .to(".earthWrap--text1", {  opacity: 1, y:50, duration : 0.8, ease: "power1.inOut" },"<+=0.5")
 
+              .to(".earthWrap--with", {  opacity: 1, y:50, duration : 0.8, ease: "power1.inOut" },"<+=0.5")
+              .to(".earthWrap--gravity", {  opacity: 1, y:50, duration : 0.8, ease: "power1.inOut" },"<+=0.5")
 
-              .set(".earthWrap--playOn", {  opacity: 1, y:50, duration : 0.8, ease: "power1.inOut" },"<+=1.0")
+              .set(".earthWrap--playOn", {  opacity: 1, y:50, duration : 0.8, ease: "power1.inOut" },"<+=0.6")
               .add(FUNCTION_playonTL,"<")
-                         
+            
+
+             .to(".box.main--j", {  opacity: 1, motionPath : PATH_LIST.main_o_path , duration : 0.9,},"<+=0.1")
              
             
     return openingTL;
@@ -79,16 +81,16 @@ function init(){
 
   function FUNCTION_playonTL(){
     let playonTL = gsap.timeline()
-    .to('.earthWrap--playOn .object1', { display : 'inline-block', duration : 0.3 },"<+=0.3")
     .to('.earthWrap--playOn .textP', { display : 'inline-block', duration : 0.3 },"<+=0.3")
     .to('.earthWrap--playOn .textL', { display : 'inline-block', duration : 0.3 },"<+=0.3")
     .to('.earthWrap--playOn .textA', { display : 'inline-block', duration : 0.3 },"<+=0.3")
     .to('.earthWrap--playOn .textY', { display : 'inline-block', duration : 0.3 },"<+=0.3")
 
 
+    .to('.earthWrap--playOn .object1', { display : 'inline-block', duration : 0.3 },"<+=0.3")
     .to('.earthWrap--playOn .poring', { display : 'inline-block', duration : 0.3 },"<+=0.3")
-    .to('.earthWrap--playOn .textN', { display : 'inline-block', duration : 0.3 },"<+=0.3")
     .to('.earthWrap--playOn .object2', { display : 'inline-block', duration : 0.3 },"<+=0.3")
+    .to('.earthWrap--playOn .textN', { display : 'inline-block', duration : 0.3 },"<+=0.3")
     .to('.earthWrap--playOn .cursor', { duration :0.01, opacity : 0, display :'none', scale : 0, color: "rgba(0,0,0,0)", })
     .add(FUNCTION_earthMoving)
 
@@ -196,18 +198,18 @@ init();
 
   function FUNCTION_mainScrollTrigger() { 
     let mainScrollTrigger = gsap.timeline({
-      
       scrollTrigger: {
         trigger: ".main",
         pin: true,
-        start: "top top",
-        end: "top bottom",
-        scrub: 2,
+        start: "center bottom",
+        end: "center top",
+        scrub: 3,
         markers : true
-                
+        
+
+        
       }
     })
-    .to(".earthWrap--playOn", { y : -150 })
     // .to(".img1", { scale: 1.0 })
     // .to("section.first .textBox2 h1.textYellow", {
     //   duration: 0.6,
