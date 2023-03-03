@@ -17,7 +17,7 @@ function init(){
   // 총괄 애니메이션
   const master = gsap.timeline();
   master.add( FUNCTION_openingTL );
-  master.add( FUNCTION_mainScrollTrigger ) ;
+  // master.add( FUNCTION_mainScrollTrigger ) ;
   // master.add( FUNCTION_poringMoving() ) ;
   // master.add( FUNCTION_openingTL_nextStep() );
   // master.add( FUNCTION_openingTL({duration : 1}).reverse() );
@@ -28,28 +28,21 @@ function init(){
     let openingTL = gsap.timeline();
     openingTL.to("section.main", { opacity: 1, duration: 0.5, ease: "power4.in" })  
              .to(".mainEarth", { scale : 1, opacity: 1, /*rotation : 360,*/ duration: 0.5, /* ease: "slow(0.7, 0.7, false)" */ })
-              //  .to(".box", { duration: 0.2, stagger: {each: 0.2, from: "center", ease: "power2.inOut" } },"<")
-
+              
               // .to(".box", {  opacity: 1, scale : 1, ease:"bounce.in", duration : 0.5, stagger: { grid: [7,15], from: "center", amount: 1 } } ,"<-=0.2") // 튀어나옴
               .from(".box", { opacity: 0, left:"50%", top:"50%", scale : 0, ease:"bounce.in", duration : 0.8, stagger: { from : "center",  amount: 0.8 } })  // 흩뿌림
-
-              // .to(".box.main--o", {  opacity: 1, motionPath : PATH_LIST.main_o_path , ease:"power4.out", duration : 1.4,},"<+=0.3")
-              // .to(".box.main--a", {  opacity: 1, motionPath : PATH_LIST.main_a_path , ease:"power4.out", duration : 1.4,},"<+=0.2")
-              // .to(".box.main--b", {  opacity: 1, motionPath : PATH_LIST.main_b_path , ease:"power4.out", duration : 1.4,},"<+=0.1")
-              // .to(".box.main--l", {  opacity: 1, motionPath : PATH_LIST.main_l_path , ease:"power4.out", duration : 1.4,},"<+=0.2")
-              // .to(".box.main--e", {  opacity: 1, motionPath : PATH_LIST.main_e_path , ease:"power4.out", duration : 1.4,},"<+=0.1")
               
               .to(".earthWrap--text1", {  opacity: 1, y:50, duration : 0.8, ease: "power1.inOut" },"<+=0.3")
 
               .to(".earthWrap--with", {  opacity: 1, y:50, duration : 0.8, ease: "power1.inOut" },"<+=0.2")
               .to(".earthWrap--gravity", {  opacity: 1, y:50, duration : 0.8, ease: "power1.inOut" },"<+=0.1")
-
               .to(".earthWrap--backgroundTitle", {  opacity: 1, duration : 2.5,},"<")
-              // .to(".earthWrap--text1", {  opacity: 1, y:50, duration : 0.8, ease: "power1.inOut" },"<-=2.3") // 좀 빠른 버전
-
-
+              
               .set(".earthWrap--playOn", {  opacity: 1, y:50, duration : 0.8, ease: "power1.inOut" },"<+=1.0")
               .add(FUNCTION_playonTL,"<")
+              .add(FUNCTION_mainScrollTrigger,"<+=1" )
+
+              
               
                          
              
@@ -196,57 +189,32 @@ init();
 
 
   function FUNCTION_mainScrollTrigger() { 
+
+    gsap.to("body", { overflow : "visible" })
+
     let mainScrollTrigger = gsap.timeline({
-      
-      
+            
       scrollTrigger: {
         trigger: '.main',
         markers: true,
         scrub: 1,
         pin: true,
-        
-        
+                
         end: () => "+=" + document.querySelector(".main").offsetHeight
       }
               
       
     })
-    .to(".earthWrap--playOn", { y : -150, duration:2, ease: "none" })
-    .to(".earthWrap--gravity", { x : 150, duration:2, ease: "none" })
-    .to(".earthWrap--with", { scale : 1.5, duration:2, ease: "none" })
+    .to(".earthWrap--playOn", { y : -340,})
+    .to(".mainEarth", { scale : 0.7}, "<")
+    .to(".earthWrap--with", { scale : 1.5})
   
-
 
     return mainScrollTrigger;
   }
 
   
-
-  
-    // const mainSection = document.querySelector('.main');
     
-      
-    //   gsap.timeline({
-    //     scrollTrigger: {
-    //       trigger: mainSection,
-    //       markers: true,
-    //       scrub: 1,
-    //       pin: true,
-    //       //snap: 1 / (sections.length - 1),
-    //       // start : "top top+=100px",
-    //       end: () => "+=" + document.querySelector(".main").offsetHeight
-    //     }
-    //   })
-    //   .to(".earthWrap--playOn", { y : -250, duration:2, ease: "none" }) .to(".earthWrap--gravity", { x : 150, duration:2, ease: "none" })
-
-      // .to(".earthWrap--with", { scale : 1.5, duration:2, ease: "none" })
-
-      
-      // .to({},{duration:1}) // empty tween for a delay at the end
-  
-
-
-  
   // 랜덤으로 여러군대 뿌려주기
   // gsap.to(".notes", {
   //   y: gsap.utils.random(-50, -100, 10, true),
