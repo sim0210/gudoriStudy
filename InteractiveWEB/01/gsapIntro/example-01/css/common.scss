@@ -4,7 +4,14 @@
   margin : 0;
 }
 
-body { overflow: hidden; }
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+body { /* overflow: hidden;*/ }
 
 section {
   opacity : 1;
@@ -22,6 +29,35 @@ section {
   .earthWrap { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); height: 1268px; width: 1285px; z-index: 2; z-index: 2; 
     &--backgroundTitle { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); opacity: 0; }
     &--text1 { position: absolute; left: 50%; top: 32%; transform: translate(-50%,-50%); opacity: 0; }
+    &--textGravityGames { position: absolute; left: 50%; top: 38%; transform: translate(-50%,-50%); opacity: 0; }
+    &--textInfo1 { position: absolute; left: 50%; top: 45%; transform: translate(-50%,-50%); opacity: 0; p { font-family: "Pretendard-Regular"; font-size: 26px; text-align: center; color: #fff; line-height: 1.5; } }
+    &--textInfo2 { position: absolute; left: 50%; top: 45%; transform: translate(-50%,-50%); opacity: 0; p { font-family: "Pretendard-Regular"; font-size: 26px; text-align: center; color: #fff; line-height: 1.5; } }
+    &--imgMainLine1 { position: absolute; left: 49.4%; bottom: 0%; height: 0; transform: translate(-50%,0%); opacity: 1; }
+    &--imgMainLine2 { position: absolute; left: 50%; top: 63.9%; transform: translate(-50%, -50%) scale(0); transform-origin: 50% 55%; opacity: 1; }
+    &--imgcenterLight { position: absolute; left: 50%; top: 63%; transform: translate(-50%, -50%) scale(0); transform-origin: 50% 50%; opacity: 1; }
+
+    &--mainCharImgWrap { opacity: 0; }
+    &--mainChar1-0  {  position: absolute; z-index: 5; top: 33%; left: 50%; transform: translateX(-121%); opacity: 1; }
+    &--mainChar1-1  {  position: absolute; z-index: 4; top: 47%; left: 50%; transform: translateX(-212%); opacity: 1; }
+    &--mainChar1-2  {  position: absolute; z-index: 3; top: 41%; left: 50%; transform: translateX(-208%); opacity: 1; }
+    &--mainChar1-3  {  position: absolute; z-index: 2; top: 26%; left: 50%; transform: translateX(-140%); opacity: 1; }
+    
+    &--mainChar1-4  {  position: absolute; z-index: 1; top: 41%; left: 50%; transform: translateX(-166%); opacity: 1; }
+    &--mainChar1-5  {  position: absolute; z-index: 0; top: 42.5%; left: 50%; transform: translateX(-343%); opacity: 1; }
+    &--mainChar1-6  {  position: absolute; z-index: 0; top: 44%; left: 50%; transform: translateX(-367%); opacity: 1; }
+
+
+    
+    &--mainChar2-0  {  position: absolute; z-index: 8; top: 51%; left: 50%; transform: translateX(37%); opacity: 1; }
+    &--mainChar2-1  {  position: absolute; z-index: 7; top: 60%; left: 50%; transform: translateX(131%); opacity: 1; }
+    &--mainChar2-2  {  position: absolute; z-index: 6; top: 37%; left: 50%; transform: translateX(55%); opacity: 1; }
+    &--mainChar2-3  {  position: absolute; z-index: 5; top: 37%; left: 50%; transform: translateX(115%); opacity: 1; }
+    &--mainChar2-4  {  position: absolute; z-index: 4; top: 27%; left: 50%; transform: translateX(124%); opacity: 1; }
+    &--mainChar2-5  {  position: absolute; z-index: 3; top: 41%; left: 50%; transform: translateX(157%); opacity: 1; }
+    &--mainChar2-6  {  position: absolute; z-index: 2; top: 40%; left: 50%; transform: translateX(209%); opacity: 1; }
+    &--mainChar2-7  {  position: absolute; z-index: 1; top: 46%; left: 50%; transform: translateX(604%); opacity: 1; }
+    
+
 
     &--playOn { position: absolute; width: 800px; height: 118px;  left: 50%; top: 44%; transform: translate(-50%,-50%); opacity: 0; text-align: center;
       i { content: ''; position: relative; display: inline-block; background: url(../images/PLAYON.png) no-repeat; }
@@ -86,6 +122,9 @@ section {
       &--obj11  {  transform: scale(1);  position: absolute; z-index: 1; top: 62%; left: 89.0973%; opacity: 1; filter: sepia(100%) hue-rotate(121deg) saturate(400%); }
       &--obj12  {  transform: scale(1);  position: absolute; z-index: 1; top: 43%; left: 101.4319%; opacity: 1; }
       &--obj13  {  transform: scale(1);  position: absolute; z-index: 1; top: 48%; left: 103.821%; opacity: 1; }
+      
+      
+
 
      }
   }
