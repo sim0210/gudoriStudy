@@ -30,23 +30,19 @@ function init(){
              .to(".mainEarth", { scale : 1, opacity: 1, /*rotation : 360,*/ duration: 0.5, /* ease: "slow(0.7, 0.7, false)" */ })
               
               // .to(".box", {  opacity: 1, scale : 1, ease:"bounce.in", duration : 0.5, stagger: { grid: [7,15], from: "center", amount: 1 } } ,"<-=0.2") // 튀어나옴
-              .from(".box", { opacity: 0, left:"50%", top:"50%", scale : 0, ease:"bounce.in", duration : 0.8, stagger: { from : "center",  amount: 0.8 } })  // 흩뿌림
+              .set(".box", { scale : 1},"<")
+              .from(".box", { opacity: 0, left:"50%", top:"50%", ease:"power1.in", duration : 0.3, stagger: { from : "center",  amount: 0.8 } },"<")  // 흩뿌림
               
-              .to(".earthWrap--text1", {  opacity: 1, y:50, duration : 0.8, ease: "power1.inOut" },"<+=0.3")
+              .to(".earthWrap--text1", {  opacity: 1, y:50, duration : 0.8, ease: "power1.in" },"<+=0.3")
 
-              .to(".earthWrap--with", {  opacity: 1, y:50, duration : 0.8, ease: "power1.inOut" },"<+=0.2")
-              .to(".earthWrap--gravity", {  opacity: 1, y:50, duration : 0.8, ease: "power1.inOut" },"<+=0.1")
+              .to(".earthWrap--with", {  opacity: 1, y:50, duration : 0.8, ease: "power1.in" },"<+=0.1")
+              .to(".earthWrap--gravity", {  opacity: 1, y:50, duration : 0.8, ease: "power1.in" },"<+=0.1")
               .to(".earthWrap--backgroundTitle", {  opacity: 1, duration : 2.5,},"<")
               
-              .set(".earthWrap--playOn", {  opacity: 1, y:50, duration : 0.8, ease: "power1.inOut" },"<+=1.0")
+              .set(".earthWrap--playOn", {  opacity: 1, y:50, duration : 0.8, ease: "power1.in" },"<+=1.0")
               .add(FUNCTION_playonTL,"<")
               .add(FUNCTION_mainScrollTrigger,"<+=1" )
-
-              
-              
-                         
-             
-            
+                                                                              
     return openingTL;
 
   }                         
@@ -73,34 +69,19 @@ function init(){
 
   function FUNCTION_playonTL(){
     let playonTL = gsap.timeline()
-    .to('.earthWrap--playOn .object1', { display : 'inline-block', duration : 0.3 },"<+=0.3")
-    .to('.earthWrap--playOn .textP', { display : 'inline-block', duration : 0.3 },"<+=0.3")
-    .to('.earthWrap--playOn .textL', { display : 'inline-block', duration : 0.3 },"<+=0.3")
-    .to('.earthWrap--playOn .textA', { display : 'inline-block', duration : 0.3 },"<+=0.3")
-    .to('.earthWrap--playOn .textY', { display : 'inline-block', duration : 0.3 },"<+=0.3")
+    .to('.earthWrap--playOn .object1', { display : 'inline-block', duration : 0.2 },"<+=0.2")
+    .to('.earthWrap--playOn .textP', { display : 'inline-block', duration : 0.2 },"<+=0.2")
+    .to('.earthWrap--playOn .textL', { display : 'inline-block', duration : 0.2 },"<+=0.2")
+    .to('.earthWrap--playOn .textA', { display : 'inline-block', duration : 0.2 },"<+=0.2")
+    .to('.earthWrap--playOn .textY', { display : 'inline-block', duration : 0.2 },"<+=0.2")
 
 
-    .to('.earthWrap--playOn .poring', { display : 'inline-block', duration : 0.3 },"<+=0.3")
-    .to('.earthWrap--playOn .textN', { display : 'inline-block', duration : 0.3 },"<+=0.3")
-    .to('.earthWrap--playOn .object2', { display : 'inline-block', duration : 0.3 },"<+=0.3")
+    .to('.earthWrap--playOn .poring', { display : 'inline-block', duration : 0.2 },"<+=0.2")
+    .to('.earthWrap--playOn .textN', { display : 'inline-block', duration : 0.2 },"<+=0.2")
+    .to('.earthWrap--playOn .object2', { display : 'inline-block', duration : 0.2 },"<+=0.2")
     .to('.earthWrap--playOn .cursor', { duration :0.01, opacity : 0, display :'none', scale : 0, color: "rgba(0,0,0,0)", })
     .add(FUNCTION_earthMoving)
 
-    // .to('.earthWrap--playOn .object1, .earthWrap--playOn .object2', { opacity : 1, })
-    // .to('.earthWrap--playOn .object1', { x: -32, duration : 0.4 })
-    // .to('.earthWrap--playOn .object2', { x: 126, duration : 0.4 }, "<")
-    // .to('.earthWrap--playOn .poring', { opacity :1, scale :1, duration :0.8, ease : "bounce.in" })
-    
-    
-    // .to('.earthWrap--playOn .object1', { x: -327, duration : 0.3 })
-    // .to('.earthWrap--playOn .object2', { x: 408 , duration : 0.3 } ,"<")
-    // .to('.earthWrap--playOn .poring', { x: 161 } ,"<")
-    // .to('.earthWrap--playOn .textN', { opacity :1, x: 300, duration : 0.2 } ,"<")
-    
-    // .to('.earthWrap--playOn .textP', { opacity :1, x: -289 , duration : 0.2 } ,"<+=0.4")
-    // .to('.earthWrap--playOn .textL', { opacity :1, x: -182 , duration : 0.2 } ,"<+=0.3")
-    // .to('.earthWrap--playOn .textA', { opacity :1, x: -79  , duration : 0.2} ,"<+=0.2")
-    // .to('.earthWrap--playOn .textY', { opacity :1, x: -70  , duration : 0.2} ,"<+=0.1")
     
 
     return playonTL;
@@ -109,39 +90,18 @@ function init(){
 
 };
 
-
-
-
-
-
 init();
 
 
-// MotionPathHelper.create(".main--1");
-
-
-// gsap.to(".earth", { opacity: 1});
-
-
-// let openingTl = gsap.timeline();
-//     openingTl.to('.img1', { rotation : 360, scale : 2.0, delay : 2, duration: 2.5 })
-//     .to("#earth", { opacity :1, duration: 8, rotationY: 360, rotateX : 360, transformOrigin: "50% 50% -400" } )
 
 
 
-    // openingTl.to("#earth", {
-    //     keyframes: {
-    //         "0%":   { opacity : 1, x: -368, scale :0.3, },
-    //         "25%":   { opacity : 0, x: 389},
-    //         // "75%":  { x: 0, y: 0}, 
-    //         // "100%": { opacity : 1, x: -368, scale :0.3, },
-    //             // easeEach: 'expo.inOut' // ease between keyframes
-    //     },
-    //     duration: 2
-    // })
 
-    
 
+
+
+
+  // 함수부분 ---------
 
   //poring moving
   function FUNCTION_poringMoving(){
@@ -197,10 +157,10 @@ init();
       scrollTrigger: {
         trigger: '.main',
         markers: true,
-        scrub: 1,
+        scrub: 3,
         pin: true,
                 
-        end: () => "+=" + document.querySelector(".main").offsetHeight
+        end: () => "+=" + document.querySelector(".main").offsetHeight*3
       }
               
       
@@ -216,13 +176,18 @@ init();
     .to(".earthWrap--gravity", {  opacity: 0,  duration : 0.1, },"<")
     
     // .to(".mainEarth", { scale : 0.9},"<")
-            
+                
     .to(".mainEarth", { scale : 1, duration : 0.3})
     .to(".earthWrap--textGravityGames", {  opacity: 1, scale : 1, duration : 0.3, },"<")
     .to(".earthWrap--textInfo1", {  opacity: 1,  duration : 0.3, },)
+    .to(".alphabet", { left:"50%", top:"60%", width : 100, height : 100, x: "-50%", y: "-50%", ease:"power4.inOut", duration : 0.8, stagger: { amount: 0.8 } }, "<") 
     .to(".earthWrap--textInfo1", {  opacity: 0,  duration : 0.3, },)
+    
+    
     .to(".earthWrap--textInfo2", {  opacity: 1,  duration : 0.3, },)
-    .set(".earthWrap--mainCharImgWrap", { opacity : 1 }, "<" )
+    .to(".alphabet.leftOut", {  x: "-1000%",  ease:"power4.inOut", opacity :0, duration : 1.2, stagger: { amount: 0.8 } },) 
+    .to(".alphabet.rightOut", {  x: "1000%",  ease:"power4.inOut", opacity :0, duration : 1.2, stagger: { amount: 0.8 } }, "<") 
+    .set(".earthWrap--mainCharImgWrap", { opacity : 1 }, "<+=1.0" )
     .from(".mainSectionImg", { x : "-50%", opacity : 0, ease:"power4.inOut", duration : 0.8, stagger: { amount: 0.8 } }, "<") 
 
     .to(".earthWrap--imgMainLine1", {  opacity: 1, height : 429,  duration : 0.3, },"<+=0.5")
@@ -230,18 +195,33 @@ init();
     .to(".earthWrap--imgcenterLight", {  opacity: 1, scale : 1, duration : 0.3, },"<")
     .to(".earthWrap--textInfo1", {  opacity: 0,  duration : 0.3, }, "<+=0.5")
 
-
-
-
-
-
-
-
-
+    .set("section.main", { backgroundColor:"#ffffff" })
+    .set("section.main .content", { backgroundColor:"#000010",  },"<" )
+    .to("section.main .content", { scale:0, overflow: "hidden", borderRadius : "1500px", duration : 1.5, ease:"none",}, "<") 
     
+        
+    .set(".contentNext", { display : "flex"},"<+=0.7") 
+    .to(".contentNext", { opacity:1, scale: 1, duration : 1.0, ease:"none",}, "<") 
+    .to(".onlineEarthWrap", { x:0, y:"-50%", scale :1,  duration : 2.0, ease:"none",}, "<")
+    .to(".onlineEarthWrap--power", { scale :1,  duration : 1.0, ease:"bounce.out",},"<+=0.6")
     
-    // .to(".box", { left:"50%", top:"50%", width : 100, height : 100, ease:"bounce.inOut", duration : 0.8, stagger: { amount: 0.8 } }, "<") 
-  
+    .to(".onlineEarthWrap", { x:"-80%", y:"20%", scale :0, opacity : 0,  duration : 2.0, ease:"none",}) 
+        
+
+    .to(".text-online", { opacity :0, x : "-70%" , scale:0 },"<+=0.3")
+    .to(".mobilePhoneWrap", { x:0, y:"-50%", scale :1, opacity : 1, duration : 2.0, ease:"none",}, "<")
+    .to(".mobilePhoneWrap--power", { scale :1,  duration : 1.0, ease:"bounce.out",}, "<+=0.5")
+    .to(".text-mobile", { opacity :1, x : "-50%" },"<")
+
+
+    .to(".iptvWrap", { x:"69%", y:"-114%", scale :0.5,  duration : 2.0, ease:"none",}, "<")
+    
+            
+    .to(".mobilePhoneWrap", { x:"-80%", y:"20%", scale :0, opacity : 0,  duration : 2.0, ease:"none",})     
+    .to(".iptvWrap", { x:100, y:"-50%", scale :1, opacity : 1, duration : 1.0, ease:"none",}, "<")
+    .to(".iptvWrap--power", { scale :1,  duration : 1.0, ease:"bounce.out",}, "<+=0.5")
+    .to(".text-mobile", { opacity :0, x : "-70%" , scale:0 },"<")
+    .to(".text-iptv", { opacity :1, x : "-50%" },"<+=0.3")
 
     return mainScrollTrigger;
   }
