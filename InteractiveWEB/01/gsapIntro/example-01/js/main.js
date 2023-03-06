@@ -221,7 +221,7 @@ init();
     .to(".earthWrap--textGravityGames", {  opacity: 1, scale : 1, duration : 0.3, },"<")
     .to(".earthWrap--textInfo1", {  opacity: 1,  duration : 0.3, },)
     .to(".earthWrap--textInfo1", {  opacity: 0,  duration : 0.3, },)
-    .to(".earthWrap--textInfo2", {  opacity: 1,  duration : 0.3, }, "<+=0.5")
+    .to(".earthWrap--textInfo2", {  opacity: 1,  duration : 0.3, },)
     .set(".earthWrap--mainCharImgWrap", { opacity : 1 }, "<" )
     .from(".mainSectionImg", { x : "-50%", opacity : 0, ease:"power4.inOut", duration : 0.8, stagger: { amount: 0.8 } }, "<") 
 
