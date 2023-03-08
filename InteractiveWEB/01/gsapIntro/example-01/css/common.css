@@ -71,7 +71,7 @@ body {
 
 section {
   opacity: 1;
-  background-color: #000010;
+  background-color: #060518;
   width: 100%;
   height: 100vh;
   display: -webkit-box;
@@ -101,7 +101,7 @@ section .content {
 }
 
 section .content .mainEarth {
-  opacity: 0.4;
+  opacity: 0;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -809,14 +809,14 @@ section .contentNext .textBox {
 
 section .contentNext .textBox h1 {
   font-size: 70px;
-  color: #000010;
+  color: #060518;
   font-weight: bold;
   font-family: 'Poppins', sans-serif;
 }
 
 section .contentNext .textBox p {
   font-size: 25px;
-  color: #000010;
+  color: #060518;
   margin-top: 20px;
   font-family: 'Pretendard-Regular';
 }
@@ -931,6 +931,276 @@ section .contentNext .imgContentBox .iptvWrap .iptvWrap--power {
   top: 44%;
   -webkit-transform: translate(-50%, -50%) scale(0);
           transform: translate(-50%, -50%) scale(0);
+}
+
+section .contentNext--obj1 {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  position: absolute;
+  z-index: 1;
+  left: 8%;
+  top: 50%;
+  opacity: 1;
+}
+
+section .contentNext--obj2 {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  position: absolute;
+  z-index: 1;
+  top: 75%;
+  left: 16%;
+  opacity: 1;
+}
+
+section .contentNext--obj3 {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  position: absolute;
+  z-index: 1;
+  left: 22%;
+  top: 89%;
+  opacity: 1;
+}
+
+section .contentNext--obj4 {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  position: absolute;
+  z-index: 1;
+  top: 62%;
+  left: 37%;
+  opacity: 1;
+}
+
+section .contentNext--obj5 {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  position: absolute;
+  z-index: 1;
+  left: 49%;
+  top: 13%;
+  opacity: 1;
+}
+
+section .contentNext--obj6 {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  position: absolute;
+  z-index: 1;
+  left: 76%;
+  top: 91%;
+  opacity: 1;
+}
+
+section .contentNext--obj7 {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  position: absolute;
+  z-index: 1;
+  top: 60%;
+  left: 26%;
+  opacity: 1;
+}
+
+section .contentNext--obj8 {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  position: absolute;
+  z-index: 1;
+  top: 73%;
+  left: 83%;
+  opacity: 1;
+}
+
+section .contentNext--obj9 {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  position: absolute;
+  z-index: 1;
+  top: 82%;
+  left: 79%;
+  opacity: 1;
+}
+
+section .contentNext--obj10 {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  position: absolute;
+  z-index: 1;
+  top: 6%;
+  left: 77%;
+  opacity: 1;
+}
+
+section .contentNext--obj11 {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  position: absolute;
+  z-index: 1;
+  top: 12%;
+  left: 89%;
+  opacity: 1;
+}
+
+section .contentNext--obj12 {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  position: absolute;
+  z-index: 1;
+  top: 26%;
+  left: 91%;
+  opacity: 1;
+}
+
+section .theWorldContent {
+  min-width: 1400px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  /* display: flex; align-items: center; justify-content: center; */
+  position: relative;
+}
+
+section .theWorldContent--playOn {
+  position: relative;
+  width: 590px;
+  height: 88px;
+  left: 50%;
+  top: 0%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  opacity: 1;
+  text-align: center;
+  margin-top: 200px;
+  -webkit-clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+}
+
+section .theWorldContent--playOn i {
+  content: '';
+  position: relative;
+  display: inline-block;
+  background: url(../images/sectionWorld/PLAYON.png) no-repeat;
+}
+
+section .theWorldContent--playOn .object1 {
+  width: 26px;
+  height: 100%;
+  display: inline-block;
+  background-position: 0 0;
+  opacity: 1;
+}
+
+section .theWorldContent--playOn .object2 {
+  width: 26px;
+  height: 100%;
+  display: inline-block;
+  background-position: -552px 0;
+  opacity: 1;
+  margin-right: 15px;
+}
+
+section .theWorldContent--playOn .poring {
+  width: 94px;
+  height: 100%;
+  display: inline-block;
+  background-position: -368px 0;
+  opacity: 1;
+  scale: 1;
+}
+
+section .theWorldContent--playOn .textP {
+  width: 73px;
+  height: 100%;
+  display: inline-block;
+  background-position: -38px 0;
+  opacity: 1;
+}
+
+section .theWorldContent--playOn .textL {
+  width: 73px;
+  height: 100%;
+  display: inline-block;
+  background-position: -111px 0;
+  opacity: 1;
+}
+
+section .theWorldContent--playOn .textA {
+  width: 78px;
+  height: 100%;
+  display: inline-block;
+  background-position: -186px 0;
+  opacity: 1;
+}
+
+section .theWorldContent--playOn .textY {
+  width: 73px;
+  height: 100%;
+  display: inline-block;
+  background-position: -264px 0;
+  opacity: 1;
+  margin-right: 7px;
+}
+
+section .theWorldContent--playOn .textN {
+  width: 89px;
+  height: 100%;
+  display: inline-block;
+  background-position: -462px 0;
+  opacity: 1;
+}
+
+section .theWorldContent h3.titWorld {
+  font-size: 0;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  text-align: center;
+  margin-top: 20px;
+}
+
+section .theWorldContent h2.titPlayonthWorld {
+  font-size: 0;
+  position: absolute;
+  left: 50%;
+  top: 5%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+section .theWorldContent--textInfo {
+  position: relative;
+  text-align: center;
+  margin-top: 50px;
+  opacity: 1;
+  font-size: 25px;
+}
+
+section .theWorldContent--textInfo div {
+  font-size: 25px;
+}
+
+section .theWorldContent--textInfo p {
+  font-family: "Pretendard-Regular";
+  font-size: 26px;
+  text-align: center;
+  color: #fff;
+  line-height: 1.5;
+}
+
+section .theWorldContent--isue {
+  margin: 80px auto;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.sectionTheWorld {
+  height: auto;
+  min-height: 100vh;
 }
 
 #test {

@@ -64,7 +64,7 @@ body { /* overflow: hidden;*/  }
 
 section {
   opacity : 1;
-  background-color : #000010;
+  background-color : #060518;
   width: 100%;
   // min-width: 1400px;
   height: 100vh;
@@ -73,58 +73,58 @@ section {
 
   .content { min-width: 1400px; width: 100%; height: 100%; margin: 0 auto; display: flex; align-items: center; position: relative;
   
-  .mainEarth { opacity: 0.4; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%) scale(0.1); transform-origin: 50% 50%; }
-  
-  .earthWrap { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); height: 1268px; width: 1285px; z-index: 2; z-index: 2; 
-    &--backgroundTitle { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); opacity: 0; }
-    &--text1 { position: absolute; left: 50%; top: 32%; transform: translate(-50%,-50%); opacity: 0; }
-    &--textGravityGames { position: absolute; left: 50%; top: 38%; transform: translate(-50%,-50%); opacity: 0; }
-    &--textInfo1 { position: absolute; left: 50%; top: 45%; transform: translate(-50%,-50%); opacity: 0; p { font-family: "Pretendard-Regular"; font-size: 26px; text-align: center; color: #fff; line-height: 1.5; } }
-    &--textInfo2 { position: absolute; left: 50%; top: 45%; transform: translate(-50%,-50%); opacity: 0; p { font-family: "Pretendard-Regular"; font-size: 26px; text-align: center; color: #fff; line-height: 1.5; } }
-    &--imgMainLine1 { position: absolute; left: 49.4%; bottom: 0%; height: 0; transform: translate(-50%,0%); opacity: 1; }
-    &--imgMainLine2 { position: absolute; left: 50%; top: 63.9%; transform: translate(-50%, -50%) scale(0); transform-origin: 50% 55%; opacity: 1; }
-    &--imgcenterLight { position: absolute; left: 50%; top: 63%; transform: translate(-50%, -50%) scale(0); transform-origin: 50% 50%; opacity: 1; }
-
-    &--mainCharImgWrap { opacity: 0; }
-    &--mainChar1-0  {  position: absolute; z-index: 5; top: 33%; left: 50%; transform: translateX(-121%); opacity: 1; }
-    &--mainChar1-1  {  position: absolute; z-index: 4; top: 47%; left: 50%; transform: translateX(-212%); opacity: 1; }
-    &--mainChar1-2  {  position: absolute; z-index: 3; top: 41%; left: 50%; transform: translateX(-208%); opacity: 1; }
-    &--mainChar1-3  {  position: absolute; z-index: 2; top: 26%; left: 50%; transform: translateX(-140%); opacity: 1; }
+    .mainEarth { opacity: 0; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%) scale(0.1); transform-origin: 50% 50%; }
     
-    &--mainChar1-4  {  position: absolute; z-index: 1; top: 41%; left: 50%; transform: translateX(-166%); opacity: 1; }
-    &--mainChar1-5  {  position: absolute; z-index: 0; top: 42.5%; left: 50%; transform: translateX(-343%); opacity: 1; }
-    &--mainChar1-6  {  position: absolute; z-index: 0; top: 44%; left: 50%; transform: translateX(-367%); opacity: 1; }
+    .earthWrap { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); height: 1268px; width: 1285px; z-index: 2; z-index: 2; 
+      &--backgroundTitle { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); opacity: 0; }
+      &--text1 { position: absolute; left: 50%; top: 32%; transform: translate(-50%,-50%); opacity: 0; }
+      &--textGravityGames { position: absolute; left: 50%; top: 38%; transform: translate(-50%,-50%); opacity: 0; }
+      &--textInfo1 { position: absolute; left: 50%; top: 45%; transform: translate(-50%,-50%); opacity: 0; p { font-family: "Pretendard-Regular"; font-size: 26px; text-align: center; color: #fff; line-height: 1.5; } }
+      &--textInfo2 { position: absolute; left: 50%; top: 45%; transform: translate(-50%,-50%); opacity: 0; p { font-family: "Pretendard-Regular"; font-size: 26px; text-align: center; color: #fff; line-height: 1.5; } }
+      &--imgMainLine1 { position: absolute; left: 49.4%; bottom: 0%; height: 0; transform: translate(-50%,0%); opacity: 1; }
+      &--imgMainLine2 { position: absolute; left: 50%; top: 63.9%; transform: translate(-50%, -50%) scale(0); transform-origin: 50% 55%; opacity: 1; }
+      &--imgcenterLight { position: absolute; left: 50%; top: 63%; transform: translate(-50%, -50%) scale(0); transform-origin: 50% 50%; opacity: 1; }
+
+      &--mainCharImgWrap { opacity: 0; }
+      &--mainChar1-0  {  position: absolute; z-index: 5; top: 33%; left: 50%; transform: translateX(-121%); opacity: 1; }
+      &--mainChar1-1  {  position: absolute; z-index: 4; top: 47%; left: 50%; transform: translateX(-212%); opacity: 1; }
+      &--mainChar1-2  {  position: absolute; z-index: 3; top: 41%; left: 50%; transform: translateX(-208%); opacity: 1; }
+      &--mainChar1-3  {  position: absolute; z-index: 2; top: 26%; left: 50%; transform: translateX(-140%); opacity: 1; }
+      
+      &--mainChar1-4  {  position: absolute; z-index: 1; top: 41%; left: 50%; transform: translateX(-166%); opacity: 1; }
+      &--mainChar1-5  {  position: absolute; z-index: 0; top: 42.5%; left: 50%; transform: translateX(-343%); opacity: 1; }
+      &--mainChar1-6  {  position: absolute; z-index: 0; top: 44%; left: 50%; transform: translateX(-367%); opacity: 1; }
 
 
-    
-    &--mainChar2-0  {  position: absolute; z-index: 8; top: 51%; left: 50%; transform: translateX(37%); opacity: 1; }
-    &--mainChar2-1  {  position: absolute; z-index: 7; top: 60%; left: 50%; transform: translateX(131%); opacity: 1; }
-    &--mainChar2-2  {  position: absolute; z-index: 6; top: 37%; left: 50%; transform: translateX(55%); opacity: 1; }
-    &--mainChar2-3  {  position: absolute; z-index: 5; top: 37%; left: 50%; transform: translateX(115%); opacity: 1; }
-    &--mainChar2-4  {  position: absolute; z-index: 4; top: 27%; left: 50%; transform: translateX(124%); opacity: 1; }
-    &--mainChar2-5  {  position: absolute; z-index: 3; top: 41%; left: 50%; transform: translateX(157%); opacity: 1; }
-    &--mainChar2-6  {  position: absolute; z-index: 2; top: 40%; left: 50%; transform: translateX(209%); opacity: 1; }
-    &--mainChar2-7  {  position: absolute; z-index: 1; top: 46%; left: 50%; transform: translateX(604%); opacity: 1; }
-    
+      
+      &--mainChar2-0  {  position: absolute; z-index: 8; top: 51%; left: 50%; transform: translateX(37%); opacity: 1; }
+      &--mainChar2-1  {  position: absolute; z-index: 7; top: 60%; left: 50%; transform: translateX(131%); opacity: 1; }
+      &--mainChar2-2  {  position: absolute; z-index: 6; top: 37%; left: 50%; transform: translateX(55%); opacity: 1; }
+      &--mainChar2-3  {  position: absolute; z-index: 5; top: 37%; left: 50%; transform: translateX(115%); opacity: 1; }
+      &--mainChar2-4  {  position: absolute; z-index: 4; top: 27%; left: 50%; transform: translateX(124%); opacity: 1; }
+      &--mainChar2-5  {  position: absolute; z-index: 3; top: 41%; left: 50%; transform: translateX(157%); opacity: 1; }
+      &--mainChar2-6  {  position: absolute; z-index: 2; top: 40%; left: 50%; transform: translateX(209%); opacity: 1; }
+      &--mainChar2-7  {  position: absolute; z-index: 1; top: 46%; left: 50%; transform: translateX(604%); opacity: 1; }
+      
 
 
-    &--playOn { position: absolute; width: 800px; height: 118px;  left: 50%; top: 44%; transform: translate(-50%,-50%); opacity: 0; text-align: center;
-      i { content: ''; position: relative; display: inline-block; background: url(../images/PLAYON.png) no-repeat; }
-      .object1 { width : 30px; height: 100%; display: none; background-position: 0 0; opacity: 1; }
-      .object2 { width : 30px; height: 100%; display: none; background-position: -737px 0; opacity: 1; margin-right: 15px; }
-      .poring { width: 124px; height: 100%;  display: none; background-position: -491px 0; opacity: 1; scale: 1; }
-      .textP { width: 98px; height: 100%;    display: none; background-position: -38px 0; opacity: 1; }
-      .textL { width: 98px; height: 100%;    display: none; background-position: -146px 0; opacity: 1; }
-      .textA { width: 98px; height: 100%;    display: none; background-position: -251px 0; opacity: 1; }
-      .textY { width: 98px; height: 100%;    display: none; background-position: -356px 0; opacity: 1; margin-right: 15px; }
-      .textN { width: 100px; height: 100%;   display: none; background-position: -629px 0; opacity: 1; }
-      .cursor { font-size: 80px; color: #fff; font-weight: bold; }
+      &--playOn { position: absolute; width: 800px; height: 118px;  left: 50%; top: 44%; transform: translate(-50%,-50%); opacity: 0; text-align: center;
+        i { content: ''; position: relative; display: inline-block; background: url(../images/PLAYON.png) no-repeat; }
+        .object1 { width : 30px; height: 100%; display: none; background-position: 0 0; opacity: 1; }
+        .object2 { width : 30px; height: 100%; display: none; background-position: -737px 0; opacity: 1; margin-right: 15px; }
+        .poring { width: 124px; height: 100%;  display: none; background-position: -491px 0; opacity: 1; scale: 1; }
+        .textP { width: 98px; height: 100%;    display: none; background-position: -38px 0; opacity: 1; }
+        .textL { width: 98px; height: 100%;    display: none; background-position: -146px 0; opacity: 1; }
+        .textA { width: 98px; height: 100%;    display: none; background-position: -251px 0; opacity: 1; }
+        .textY { width: 98px; height: 100%;    display: none; background-position: -356px 0; opacity: 1; margin-right: 15px; }
+        .textN { width: 100px; height: 100%;   display: none; background-position: -629px 0; opacity: 1; }
+        .cursor { font-size: 80px; color: #fff; font-weight: bold; }
+      }
+
+
+      &--with { position: absolute; left: 50%; top: 56%; transform: translate(-50%,-50%); opacity: 0; }
+      &--gravity { position: absolute; left: 50%; top: 64%; transform: translate(-50%,-50%); opacity: 0; }
     }
-
-
-    &--with { position: absolute; left: 50%; top: 56%; transform: translate(-50%,-50%); opacity: 0; }
-    &--gravity { position: absolute; left: 50%; top: 64%; transform: translate(-50%,-50%); opacity: 0; }
-  }
 
 
 
@@ -174,8 +174,8 @@ section {
   .contentNext {position: absolute; z-index: 2; min-width: 1400px; width: 100%; height: 100vh; margin: 0 auto; left: 50%; top: 50%; transform: translate(-50%,-50%) scale(0); display: none; align-items: center; justify-content: center; flex-direction: row; opacity : 0;
     .textBox { width: auto; min-height: 400px; height: auto; position: relative; min-width: 500px;
     
-      h1 { font-size: 70px; color: #000010; font-weight: bold; font-family: 'Poppins', sans-serif;}
-      p { font-size: 25px; color: #000010; margin-top: 20px; font-family: 'Pretendard-Regular'; }
+      h1 { font-size: 70px; color: #060518; font-weight: bold; font-family: 'Poppins', sans-serif;}
+      p { font-size: 25px; color: #060518; margin-top: 20px; font-family: 'Pretendard-Regular'; }
       a { display: block; width: 67px; height: 67px; margin-top: 20px; transition: 0.5s all;
         &.btn-link { /*background: url(../images/btn-link-off.png) no-repeat; */ }
         &:hover { filter: invert(100%);  }
@@ -208,11 +208,53 @@ section {
 
     }
 
+   
+    &--obj1  {  transform: scale(1);  position: absolute; z-index: 1; left: 8%; top: 50%; opacity: 1; }
+    &--obj2  {  transform: scale(1);  position: absolute; z-index: 1; top: 75%; left: 16%; opacity: 1; }
+    &--obj3  {  transform: scale(1);  position: absolute; z-index: 1; left: 22%; top: 89%; opacity: 1; }
+    &--obj4  {  transform: scale(1);  position: absolute; z-index: 1; top: 62%; left: 37%; opacity: 1; }
+    &--obj5  {  transform: scale(1);  position: absolute; z-index: 1; left: 49%; top: 13%; opacity: 1; }
+    &--obj6  {  transform: scale(1);  position: absolute; z-index: 1; left: 76%; top: 91%; opacity: 1; }
+    &--obj7  {  transform: scale(1);  position: absolute; z-index: 1; top: 60%; left: 26%; opacity: 1; }
+    
+    &--obj8  {  transform: scale(1);  position: absolute; z-index: 1; top: 73%; left: 83%; opacity: 1; }
+    &--obj9  {  transform: scale(1);  position: absolute; z-index: 1; top: 82%; left: 79%; opacity: 1; }
+    &--obj10  {  transform: scale(1);  position: absolute; z-index: 1; top: 6%; left: 77%; opacity: 1; }
+    &--obj11  {  transform: scale(1);  position: absolute; z-index: 1; top: 12%; left: 89%; opacity: 1; }
+    &--obj12  {  transform: scale(1);  position: absolute; z-index: 1; top: 26%; left: 91%; opacity: 1; }
+    
+    
+  }
+
+
+  
+  .theWorldContent { min-width: 1400px; width: 100%; height: 100%; margin: 0 auto; /* display: flex; align-items: center; justify-content: center; */ position: relative;
+    
+    &--playOn { position: relative; width: 590px; height: 88px; left: 50%; top: 0%; transform: translate(-50%); opacity: 1; text-align: center; margin-top : 200px; clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+      i { content: ''; position: relative; display: inline-block; background: url(../images/sectionWorld/PLAYON.png) no-repeat; }
+      .object1 { width : 26px; height: 100%; display: inline-block; background-position: 0 0; opacity: 1; }
+      .object2 { width : 26px; height: 100%; display: inline-block; background-position: -552px 0; opacity: 1; margin-right: 15px; }
+      .poring { width: 94px; height: 100%;  display: inline-block; background-position: -368px 0; opacity: 1; scale: 1; }
+      .textP { width: 73px; height: 100%;    display: inline-block; background-position: -38px 0; opacity: 1; }
+      .textL { width: 73px; height: 100%;    display: inline-block; background-position: -111px 0; opacity: 1; }
+      .textA { width: 78px; height: 100%;    display: inline-block; background-position: -186px 0; opacity: 1; }
+      .textY { width: 73px; height: 100%;    display: inline-block; background-position: -264px 0; opacity: 1; margin-right: 7px; }
+      .textN { width: 89px; height: 100%;   display: inline-block; background-position: -462px 0; opacity: 1; }
+      
+    }
+
+
+    h3.titWorld { font-size: 0; position: relative; left: 50%; transform: translateX(-50%); text-align: center; margin-top : 20px; }
+    h2.titPlayonthWorld { font-size: 0; position: absolute; left: 50%; top: 5%; transform: translateX(-50%);  }
+    
+    &--textInfo { position: relative; text-align: center; margin-top: 50px; opacity: 1; font-size: 25px; div { font-size: 25px; } p { font-family: "Pretendard-Regular"; font-size: 26px; text-align: center; color: #fff; line-height: 1.5; } }
+
+    &--isue { margin: 80px auto; position: relative; left: 50%; transform: translateX(-50%); }
   }
 
   
 }
-
+.sectionTheWorld { height: auto; min-height: 100vh;  }
 
 // .img1 { transform: scale(0.2); position : absolute }
 // section.main { position: relative; border-top:1px solid red; background-color : black; padding-top : 250px } 
