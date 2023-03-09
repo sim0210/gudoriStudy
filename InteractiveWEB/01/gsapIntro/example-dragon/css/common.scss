@@ -89,7 +89,7 @@ section {
       video { opacity: 0; position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; clip-path: url(#clip); }
       
 
-      .img-svgPlay {  width: 189px; height: 199px; z-index: 2; position: absolute; mix-blend-mode: multiply; left: -15px; top: -7px;  }
+      .img-svgPlay {  width: 192px; height: 199px; z-index: 2; position: absolute; mix-blend-mode: multiply; left: -16px; top: -5px;  }
      }
 
      div.bottomTextWrap { display: flex; align-items: center; }
@@ -105,42 +105,25 @@ section {
 
   }
 
-
-  .contentNext {position: absolute; z-index: 2; min-width: 1400px; width: 100%; height: 100vh; margin: 0 auto; left: 50%; top: 50%; transform: translate(-50%,-50%) scale(0); display: none; align-items: center; justify-content: center; flex-direction: row; opacity : 0;
-    .textBox { width: auto; min-height: 400px; height: auto; position: relative; min-width: 500px;
+  
+  &.sectionNext { height: auto; min-height: 100vh;  }
+  .mainNextContent { min-width: 1800px; width: 100%; height: 100%; margin: 0 auto; position: relative; display: flex; justify-content: center; flex-wrap: wrap;
+       
     
-      h1 { font-size: 70px; color: #060518; font-weight: bold; font-family: 'Poppins', sans-serif;}
-      p { font-size: 25px; color: #060518; margin-top: 20px; font-family: 'Pretendard-Regular'; }
-      a { display: block; width: 67px; height: 67px; margin-top: 20px; transition: 0.5s all;
-        &.btn-link { /*background: url(../images/btn-link-off.png) no-repeat; */ }
-        &:hover { filter: invert(100%);  }
-        img { border-radius: 231px; }
-      } 
+    div[class^="block"] {
+      position: relative; white-space: nowrap; margin: 0 auto 100px;
     }
 
+    .lineLeft { position: relative; left: 2%; z-index: 3; top : 0% }
+    .lineLeftSmall { position: relative; left: -3%; top: 19%; z-index: 2;  }
+    .lineCenter { position: relative; left: 0%; top : 10% }
+    .lineRightSmall { position: relative; right: -3%; top: 32%; z-index: 2; }
+    .lineRight { position: relative; right: 2%; top: 0%; z-index: 3; }
 
-
-    
-    
-  }
-
-
-  
-  .theWorldContent { min-width: 1400px; width: 100%; height: 100%; margin: 0 auto; /* display: flex; align-items: center; justify-content: center; */ position: relative;
-    
-
-
-    h3.titWorld { font-size: 0; position: relative; left: 50%; transform: translateX(-50%); text-align: center; margin-top : 20px; }
-    h2.titPlayonthWorld { font-size: 0; position: absolute; left: 50%; top: 5%; transform: translateX(-50%);  }
-    
-    &--textInfo { position: relative; text-align: center; margin-top: 50px; opacity: 1; font-size: 25px; div { font-size: 25px; } p { font-family: "Pretendard-Regular"; font-size: 26px; text-align: center; color: #fff; line-height: 1.5; } }
-
-    &--isue { margin: 80px auto; position: relative; left: 50%; transform: translateX(-50%); }
   }
 
   
 }
-.sectionTheWorld { height: auto; min-height: 100vh;  }
 
 // .img1 { transform: scale(0.2); position : absolute }
 // section.main { position: relative; border-top:1px solid red; background-color : black; padding-top : 250px } 

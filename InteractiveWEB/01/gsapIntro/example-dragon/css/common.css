@@ -149,13 +149,13 @@ section .content--videoWrap video {
 }
 
 section .content--videoWrap .img-svgPlay {
-  width: 189px;
+  width: 192px;
   height: 199px;
   z-index: 2;
   position: absolute;
   mix-blend-mode: multiply;
-  left: -15px;
-  top: -7px;
+  left: -16px;
+  top: -5px;
 }
 
 section .content div.bottomTextWrap {
@@ -209,134 +209,65 @@ section .content .text-gravity {
           clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
 }
 
-section .contentNext {
-  position: absolute;
-  z-index: 2;
-  min-width: 1400px;
-  width: 100%;
-  height: 100vh;
-  margin: 0 auto;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%) scale(0);
-          transform: translate(-50%, -50%) scale(0);
-  display: none;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  opacity: 0;
-}
-
-section .contentNext .textBox {
-  width: auto;
-  min-height: 400px;
+section.sectionNext {
   height: auto;
-  position: relative;
-  min-width: 500px;
+  min-height: 100vh;
 }
 
-section .contentNext .textBox h1 {
-  font-size: 70px;
-  color: #060518;
-  font-weight: bold;
-  font-family: 'Poppins', sans-serif;
-}
-
-section .contentNext .textBox p {
-  font-size: 25px;
-  color: #060518;
-  margin-top: 20px;
-  font-family: 'Pretendard-Regular';
-}
-
-section .contentNext .textBox a {
-  display: block;
-  width: 67px;
-  height: 67px;
-  margin-top: 20px;
-  -webkit-transition: 0.5s all;
-  transition: 0.5s all;
-}
-
-section .contentNext .textBox a.btn-link {
-  /*background: url(../images/btn-link-off.png) no-repeat; */
-}
-
-section .contentNext .textBox a:hover {
-  -webkit-filter: invert(100%);
-          filter: invert(100%);
-}
-
-section .contentNext .textBox a img {
-  border-radius: 231px;
-}
-
-section .theWorldContent {
-  min-width: 1400px;
+section .mainNextContent {
+  min-width: 1800px;
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  /* display: flex; align-items: center; justify-content: center; */
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-section .theWorldContent h3.titWorld {
-  font-size: 0;
+section .mainNextContent div[class^="block"] {
   position: relative;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  text-align: center;
-  margin-top: 20px;
+  white-space: nowrap;
+  margin: 0 auto 100px;
 }
 
-section .theWorldContent h2.titPlayonthWorld {
-  font-size: 0;
-  position: absolute;
-  left: 50%;
-  top: 5%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-}
-
-section .theWorldContent--textInfo {
+section .mainNextContent .lineLeft {
   position: relative;
-  text-align: center;
-  margin-top: 50px;
-  opacity: 1;
-  font-size: 25px;
+  left: 2%;
+  z-index: 3;
+  top: 0%;
 }
 
-section .theWorldContent--textInfo div {
-  font-size: 25px;
-}
-
-section .theWorldContent--textInfo p {
-  font-family: "Pretendard-Regular";
-  font-size: 26px;
-  text-align: center;
-  color: #fff;
-  line-height: 1.5;
-}
-
-section .theWorldContent--isue {
-  margin: 80px auto;
+section .mainNextContent .lineLeftSmall {
   position: relative;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  left: -3%;
+  top: 19%;
+  z-index: 2;
 }
 
-.sectionTheWorld {
-  height: auto;
-  min-height: 100vh;
+section .mainNextContent .lineCenter {
+  position: relative;
+  left: 0%;
+  top: 10%;
+}
+
+section .mainNextContent .lineRightSmall {
+  position: relative;
+  right: -3%;
+  top: 32%;
+  z-index: 2;
+}
+
+section .mainNextContent .lineRight {
+  position: relative;
+  right: 2%;
+  top: 0%;
+  z-index: 3;
 }
 
 #test {

@@ -21,6 +21,9 @@ function init(){
   // 총괄 애니메이션
   const master = gsap.timeline();
   master.add( FUNCTION_openingTL );
+  master.add( FUNCTION_mainButtonScrollTrigger );
+  master.add( FUNCTION_sectionNextTrigger );
+  
 
   
   function FUNCTION_openingTL(){
@@ -40,11 +43,14 @@ function init(){
     .to(".text-gravity",  { duration : 0.8, "clip-path": "polygon(0% 0%, 85% 0%, 85% 100%, 0% 100%)" },"<") 
     .to(".text-gravity",  { duration : 0.8, "clip-path": "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" },"<")
     
-    .to(".content--videoWrap", { x :"50%" , scale : 3.5, opacity :0.8, duration: 0.5, ease: "" },"<+=0.5")
+    .to(".content--videoWrap", { scale : 0.9, opacity :0.8, duration: 0.5, ease: "" },"<+=0.5")
+    
+    .to(".content--videoWrap", { x :"54%", y: "-63%" , scale : 3.56, opacity :0.8, duration: 0.5, ease: "" }, "<+=0.5")
     .to( ".text-playon", { duration :0.7, attr: { src: "images/tit-play.png" } },"<")
+    .to(".img-svgPlay", { opacity :0 ,duration: 0.5, ease: "" },"<")
     .to("#mainVideo", { opacity :1 ,duration: 0.7, ease: "" },"<")
-    .to(".text-hypen", { scaleX : 0.4 ,duration: 1.5, ease: CustomEase.create("custom", "M0,0 C0.14,0 0.242,0.438 0.272,0.561 0.313,0.728 0.354,0.963 0.362,1 0.37,0.985 0.414,0.873 0.455,0.811 0.51,0.726 0.573,0.753 0.586,0.762 0.662,0.812 0.719,0.981 0.726,0.998 0.818,0.998 1,1 1,1 ") })
-    .to(".text-with", { x : 92 ,duration: 1.5, ease: CustomEase.create("custom", "M0,0 C0.14,0 0.242,0.438 0.272,0.561 0.313,0.728 0.354,0.963 0.362,1 0.37,0.985 0.414,0.873 0.455,0.811 0.51,0.726 0.573,0.753 0.586,0.762 0.662,0.812 0.719,0.981 0.726,0.998 0.818,0.998 1,1 1,1 ") },"<")
+    .to(".text-hypen", { scaleX : 0.4 ,duration: 2.5, ease: CustomEase.create("custom", "M0,0 C0.14,0 0.242,0.438 0.272,0.561 0.313,0.728 0.354,0.963 0.362,1 0.37,0.985 0.414,0.873 0.455,0.811 0.51,0.726 0.573,0.753 0.586,0.762 0.662,0.812 0.719,0.981 0.726,0.998 0.818,0.998 1,1 1,1 ") })
+    .to(".text-with", { x : 92 ,duration: 2.5, ease: CustomEase.create("custom", "M0,0 C0.14,0 0.242,0.438 0.272,0.561 0.313,0.728 0.354,0.963 0.362,1 0.37,0.985 0.414,0.873 0.455,0.811 0.51,0.726 0.573,0.753 0.586,0.762 0.662,0.812 0.719,0.981 0.726,0.998 0.818,0.998 1,1 1,1 ") },"<")
                                                                               
     return openingTL;
 
@@ -167,31 +173,75 @@ init();
 
 
 
-  function FUNCTION_mainScrollTrigger() { 
+  
+
+  function FUNCTION_mainButtonScrollTrigger() { 
 
     // gsap.to("body", { overflow : "visible" })
 
-    let mainScrollTrigger = gsap.timeline({
+    let mainButtonScrollTrigger = gsap.timeline({
             
       scrollTrigger: {
-        trigger: '.main',
-        markers: true,
-        scrub: 3,
-        pin: true,
-                
-        end: () => "+=" + document.querySelector(".main").offsetHeight*3
+        trigger: '.sectionTheWorld',
+        // markers: true,
+        scrub: 0.5,
+        
       }
               
       
     })
-    .to(".earthWrap--playOn", { y : -180, scale : 0.8, duration : 0.2,})
+    .to(".content--videoWrap", {  scale : 8, y: "-120%", duration: 0.2, rotate :100, ease: "" })
+   
+    return mainButtonScrollTrigger;
+  }
+  
+
+
+  function FUNCTION_sectionNextTrigger() { 
+
+    // gsap.to("body", { overflow : "visible" })
+
+    let sectionNextTrigger = gsap.timeline({
+      
+      scrollTrigger: {
+        trigger: '.sectionNext',
+        markers: true,
+        scrub: 1,
+        start : "center bottom",
+        end : "top top"
+        
+        
+        
+      }
+              
+      
+    })
+    .from(".block1 .lineLeft", { top: "130%",  duration: 2, ease: "",})
+    .from(".block1 .lineLeftSmall", { top: "129%",  duration: 2, ease: "" }," <")
+    .from(".block1 .lineCenter", { top: "135%",  duration: 2, ease: "" }," <")
+    .from(".block1 .lineRightSmall", { top: "125%",  duration: 2, ease: "" }," <")
+    .from(".block1 .lineRight", { top: "125%",  duration: 2, ease: "" }," <")
+
+
+    // .from(".block2 .lineLeft", { y: "210%",  duration: 0.5, ease: "" })
+    // .from(".block1 .lineLeftSmall", { y: "270%",  duration: 2, ease: "" }," <")
+    // .from(".block1 .lineCenter", { y: "260%",  duration: 2, ease: "" }," <")
+    // .from(".block1 .lineRightSmall", { y: "240%",  duration: 2, ease: "" }," <")
+    // .from(".block1 .lineRight", { y: "250%",  duration: 2, ease: "" }," <")
+
+
+    // .from(".block3 .lineLeft", { y: "210%",  duration: 0.5, ease: "" })
+    // .from(".block3 .lineLeftSmall", { y: "240%",  duration: 0.5, ease: "" })
+    // .from(".block3 .lineCenter", { y: "230%",  duration: 0.5, ease: "" })
+    // .from(".block3 .lineRightSmall", { y: "290%",  duration: 0.5, ease: "" })
+    // .from(".block3 .lineRight", { y: "310%",  duration: 0.5, ease: "" })
    
 
 
-    return mainScrollTrigger;
+    
+    return sectionNextTrigger;
   }
 
-  
     
   // 랜덤으로 여러군대 뿌려주기
   // gsap.to(".notes", {
