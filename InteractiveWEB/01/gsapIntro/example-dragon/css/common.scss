@@ -82,7 +82,7 @@ section {
 
   &.main  { background: url(../images/bg-repeat.jpg) no-repeat; background-size: cover; opacity: 0;  }
 
-  .content { min-width: 1400px; width: 100%; height: 100%; margin: 0 auto; display: flex; align-items: center; position: relative; justify-content: center; flex-direction: column;
+  .content { min-width: 1000px; width: 100%; height: 100%; margin: 0 auto; display: flex; align-items: center; position: relative; justify-content: center; flex-direction: column;
 
     &--videoWrap { 
       position: absolute; top : 50%; left: 50%; transform: translate(-50%, -60%); opacity: 1; z-index: 1; width: 170px; height: 190px; /* -126 -59 로 와야함 결국은 */
@@ -107,18 +107,30 @@ section {
 
   
   &.sectionNext { height: auto; min-height: 100vh;  }
-  .mainNextContent { min-width: 1800px; width: 100%; height: 100%; margin: 0 auto; position: relative; display: flex; justify-content: center; flex-wrap: wrap;
+  .mainNextContent { min-width: 1000px; width: 100%; height: 100%; margin: 0 auto; position: relative; display: flex; justify-content: center; flex-wrap: wrap;
        
     
     div[class^="block"] {
-      position: relative; white-space: nowrap; margin: 0 auto 100px;
+      position: relative; white-space: nowrap; margin: 0 auto 200px;
     }
 
-    .lineLeft { position: relative; left: 2%; z-index: 3; top : 0% }
-    .lineLeftSmall { position: relative; left: -3%; top: 19%; z-index: 2;  }
-    .lineCenter { position: relative; left: 0%; top : 10% }
-    .lineRightSmall { position: relative; right: -3%; top: 32%; z-index: 2; }
-    .lineRight { position: relative; right: 2%; top: 0%; z-index: 3; }
+    &--item1 { position: relative; left: 6%; z-index: 3; top : 0% }
+    &--item2 { position: relative; left: -3%; top: 46%; z-index: 2;  }
+    &--item3 { position: relative; left: 0%; top : 10% }
+    &--item4 { position: relative; right: -3%; top: 42%; z-index: 2; }
+    &--item5 { position: relative; right: 5%; top: 0%; z-index: 3; }
+
+    &--item6 { position: relative; left: 2%; z-index: 3; top : 50% }
+    &--item7 { position: relative; left: -3%;  top: 27%; z-index: 2;  }
+    &--item8 { position: relative; left: 0%; top : 65% }
+    &--item9 { position: relative; right: -3%; top: 38%; z-index: 2; }
+    &--item10 { position: relative; right: 2%; top: 31%; z-index: 3; }
+
+    &--item11 { position: relative; left: 2%; z-index: 3; top : 50% }
+    &--item12 { position: relative; left: -3%;  top: 27%; z-index: 2;  }
+    &--item13 { position: relative; left: 0%; top : 65% }
+    &--item14 { position: relative; right: -3%; top: 38%; z-index: 2; }
+    &--item15 { position: relative; right: 2%; top: 31%; z-index: 3; }
 
   }
 

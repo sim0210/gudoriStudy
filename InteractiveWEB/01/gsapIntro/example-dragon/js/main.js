@@ -1,15 +1,16 @@
 document.addEventListener("DOMContentLoaded", function(){
+  
   setTimeout(()=> {
     window.scrollTo(0,0);
-  },50)
-  // disableScroll();
+  },100)
+  disableScroll();
 });
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother, MotionPathPlugin);
 
 // 스크롤 스무터 구동.
 let smoother = ScrollSmoother.create({
-    smooth: 2,   
+    smooth: 3,   
     effects: true
   });
 
@@ -20,9 +21,11 @@ function init(){
   
   // 총괄 애니메이션
   const master = gsap.timeline();
-  master.add( FUNCTION_openingTL );
-  master.add( FUNCTION_mainButtonScrollTrigger );
+  master.add( FUNCTION_openingTL );  
   master.add( FUNCTION_sectionNextTrigger );
+  master.add( FUNCTION_sectionNextTrigger2 );
+  master.add( FUNCTION_sectionNextTrigger3 );
+  
   
 
   
@@ -51,7 +54,10 @@ function init(){
     .to("#mainVideo", { opacity :1 ,duration: 0.7, ease: "" },"<")
     .to(".text-hypen", { scaleX : 0.4 ,duration: 2.5, ease: CustomEase.create("custom", "M0,0 C0.14,0 0.242,0.438 0.272,0.561 0.313,0.728 0.354,0.963 0.362,1 0.37,0.985 0.414,0.873 0.455,0.811 0.51,0.726 0.573,0.753 0.586,0.762 0.662,0.812 0.719,0.981 0.726,0.998 0.818,0.998 1,1 1,1 ") })
     .to(".text-with", { x : 92 ,duration: 2.5, ease: CustomEase.create("custom", "M0,0 C0.14,0 0.242,0.438 0.272,0.561 0.313,0.728 0.354,0.963 0.362,1 0.37,0.985 0.414,0.873 0.455,0.811 0.51,0.726 0.573,0.753 0.586,0.762 0.662,0.812 0.719,0.981 0.726,0.998 0.818,0.998 1,1 1,1 ") },"<")
-                                                                              
+    .add( FUNCTION_mainButtonScrollTrigger,"<")
+    .add(enableScroll,"<+=0.7")
+      
+    
     return openingTL;
 
   }                         
@@ -60,74 +66,8 @@ function init(){
   // img src 변경
   // gsap.set(img, { attr: { src: newSRC } });
 
-  function FUNCTION_openingTL_nextStep() {
-    let nextStepTl = gsap.timeline({repeat: 1}) 
-    
-    .to(".box.main--o", { scale : 0 })
-    .to(".box.main--o", {  x: -105.55, scale : 0, duration : 1.5, ease: "power1.inOut" })
-    .set(".box.main--o", {  x: 906, scale : 0} )
-    .to(".box.main--o", { scale : 1 })
-    .to(".box.main--o", {  x: -105.55,  duration : 5.5, ease: "power1.inOut" })
-    .to(".box.main--o", { scale : 0, duration : 1 },"<+=4.7")
-    .to(".box.main--o", {  x: 6, scale : 1} )
-
-    return nextStepTl;
-  }
-
-  
-
-  function FUNCTION_playonTL(){
-    let playonTL = gsap.timeline()
-    .to('.earthWrap--playOn .object1', { display : 'inline-block', duration : 0.2 },"<+=0.2")
-    .to('.earthWrap--playOn .textP', { display : 'inline-block', duration : 0.2 },"<+=0.2")
-    .to('.earthWrap--playOn .textL', { display : 'inline-block', duration : 0.2 },"<+=0.2")
-    .to('.earthWrap--playOn .textA', { display : 'inline-block', duration : 0.2 },"<+=0.2")
-    .to('.earthWrap--playOn .textY', { display : 'inline-block', duration : 0.2 },"<+=0.2")
 
 
-    .to('.earthWrap--playOn .poring', { display : 'inline-block', duration : 0.2 },"<+=0.2")
-    .to('.earthWrap--playOn .textN', { display : 'inline-block', duration : 0.2 },"<+=0.2")
-    .to('.earthWrap--playOn .object2', { display : 'inline-block', duration : 0.2 },"<+=0.2")
-    .to('.earthWrap--playOn .cursor', { duration :0.01, opacity : 0, display :'none', scale : 0, color: "rgba(0,0,0,0)", })
-    .add(FUNCTION_earthMoving)
-
-    
-
-    return playonTL;
-  }
-
-
-
-  function FUNCTION_splitTextTL(){
-    // kill();
-    var $text = $(".theWorldContent--textInfo p"),
-    mySplitText = new SplitText($text, {type:"words"});
-    gsap.set($text, {perspective:400});
-    
-    const splitTextTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.theWorldContent--textInfo',        
-        scrub: 3,  
-        markers : true,
-        start : "top-=100 80%",
-        end : "bottom 80%",
-        duration : 0.8
-
-
-      }
-    });
-    mySplitText.split({type:"chars, words"}) 
-    
-    splitTextTimeline.from(mySplitText.chars, {duration: 1.5, scale:10, autoAlpha:0, rotationX:-180,  transformOrigin:"100% 50%", ease:"back", stagger: 0.02});
-    
-    function kill(){
-      splitTextTimeline.clear().time(0);
-      mySplitText.revert();
-    };
-
-    return splitTextTimeline;
-    
-  }
 
 
 
@@ -141,48 +81,16 @@ init();
 
   // 함수부분 ---------
 
-  //poring moving
-  function FUNCTION_poringMoving(){
-    const poringMovingTl = gsap
-    .timeline({
-      repeat: -1,
-      yoyo: true            
-    })
-    .set(".poring", {
-      rotation: 5,
-      transformOrigin: "center"
-    })
-    .to(".poring", {
-      rotation: -5,
-      transformOrigin: "center",
-      ease: "power1.inOut",
-      duration : 1
-    });
-
-    return poringMovingTl;
-  }
-
-
-  // contentNext object moving
-  function FUNCTION_contentNextOBJMoving(){
-    const contentNextOBJMoving = gsap.timeline({ })
-    .to(".objectBox", { y: 20, rotation :-10, ease: "bounce.out", duration : 1.5, stagger: { from: "center", each :0.1, repeat : -1, yoyo:true } }) 
-
-    return contentNextOBJMoving;
-  }
-
-
-
   
 
   function FUNCTION_mainButtonScrollTrigger() { 
 
-    // gsap.to("body", { overflow : "visible" })
+    
 
     let mainButtonScrollTrigger = gsap.timeline({
             
       scrollTrigger: {
-        trigger: '.sectionTheWorld',
+        trigger: '.sectionNext',
         // markers: true,
         scrub: 0.5,
         
@@ -199,47 +107,90 @@ init();
 
   function FUNCTION_sectionNextTrigger() { 
 
-    // gsap.to("body", { overflow : "visible" })
+ 
 
-    let sectionNextTrigger = gsap.timeline({
+    let sectionNextTrigger_1 = gsap.timeline({
       
       scrollTrigger: {
         trigger: '.sectionNext',
-        markers: true,
-        scrub: 1,
-        start : "center bottom",
-        end : "top top"
-        
-        
-        
+        // markers: true,
+        scrub: 3,
+        // pin : true
+        // start : "center center",
+        // end: "bottom top"
+                        
       }
               
       
     })
-    .from(".block1 .lineLeft", { top: "130%",  duration: 2, ease: "",})
-    .from(".block1 .lineLeftSmall", { top: "129%",  duration: 2, ease: "" }," <")
-    .from(".block1 .lineCenter", { top: "135%",  duration: 2, ease: "" }," <")
-    .from(".block1 .lineRightSmall", { top: "125%",  duration: 2, ease: "" }," <")
-    .from(".block1 .lineRight", { top: "125%",  duration: 2, ease: "" }," <")
+    .to(".block1", { y: -405,  duration: 2, ease: "",}," <")
 
-
-    // .from(".block2 .lineLeft", { y: "210%",  duration: 0.5, ease: "" })
-    // .from(".block1 .lineLeftSmall", { y: "270%",  duration: 2, ease: "" }," <")
-    // .from(".block1 .lineCenter", { y: "260%",  duration: 2, ease: "" }," <")
-    // .from(".block1 .lineRightSmall", { y: "240%",  duration: 2, ease: "" }," <")
-    // .from(".block1 .lineRight", { y: "250%",  duration: 2, ease: "" }," <")
-
-
-    // .from(".block3 .lineLeft", { y: "210%",  duration: 0.5, ease: "" })
-    // .from(".block3 .lineLeftSmall", { y: "240%",  duration: 0.5, ease: "" })
-    // .from(".block3 .lineCenter", { y: "230%",  duration: 0.5, ease: "" })
-    // .from(".block3 .lineRightSmall", { y: "290%",  duration: 0.5, ease: "" })
-    // .from(".block3 .lineRight", { y: "310%",  duration: 0.5, ease: "" })
-   
-
-
+    .from(".block1 .lineLeft", { top: "130%",  duration: 0.5, ease: "",}," <")
+    .from(".block1 .lineLeftSmall", { top: "155%",  duration: 0.8, ease: "" }," <")
+    .from(".block1 .lineCenter", { top: "100%",  duration: 1.8, ease: "" }," <+=0.5")
+    .from(".block1 .lineRightSmall", { top: "125%",  duration: 1.5, ease: "" }," <")
+    .from(".block1 .lineRight", { top: "150%",  duration: 0.5, ease: "" }," <")
     
-    return sectionNextTrigger;
+       
+    return sectionNextTrigger_1;
+  }
+
+  function FUNCTION_sectionNextTrigger2() { 
+
+ 
+
+    let sectionNextTrigger_2 = gsap.timeline({
+      
+      scrollTrigger: {
+        trigger: '.block2',
+        markers: true,
+        scrub: 3,
+        // pin : true
+        start : "top bottom",
+        end: "top top"
+                        
+      }                    
+    })
+    .to(".block2", { y: -105,  duration: 2, ease: "",}," <")
+    .to(".mainNextContent--item6", { y : "-60%",  duration: 0.9, ease: "" },"<")
+    .to(".mainNextContent--item7", { top : "-60%",  duration: 1.5, ease: "" },"<")
+    .to(".mainNextContent--item8", { y : "-80%", duration: 1.5, ease: "" },"<")
+    .to(".mainNextContent--item9", { top : "-50%",  duration: 1.5, ease: "" },"<")
+    .to(".mainNextContent--item10", { top : "-30%",  duration: 1.5, ease: "" },"<")
+ 
+
+
+       
+    return sectionNextTrigger_2;
+  }
+
+  function FUNCTION_sectionNextTrigger3() { 
+
+ 
+
+    let sectionNextTrigger_3 = gsap.timeline({
+      
+      scrollTrigger: {
+        trigger: '.block3',
+        markers: true,
+        scrub: 3,
+        // pin : true
+        start : "top bottom",
+        end: "top top"
+                        
+      }                    
+    })
+    .to(".block3", { y: -305,  duration: 2, ease: "",}," <")
+    .to(".mainNextContent--item11", { y : "-60%",  duration: 0.9, ease: "" },"<")
+    .to(".mainNextContent--item12", { top : "-60%",  duration: 1.5, ease: "" },"<")
+    .to(".mainNextContent--item13", { y : "-90%", duration: 1.5, ease: "" },"<")
+    .to(".mainNextContent--item14", { top : "-50%",  duration: 1.5, ease: "" },"<")
+    .to(".mainNextContent--item15", { top : "-30%",  duration: 1.5, ease: "" },"<")
+ 
+
+
+       
+    return sectionNextTrigger_3;
   }
 
     
