@@ -25,6 +25,8 @@ function init(){
   master.add( FUNCTION_sectionNextTrigger );
   master.add( FUNCTION_sectionNextTrigger2 );
   master.add( FUNCTION_sectionNextTrigger3 );
+  master.add( FUNCTION_sectionNextTriggerFinal );
+  
   
   
 
@@ -92,13 +94,13 @@ init();
       scrollTrigger: {
         trigger: '.sectionNext',
         // markers: true,
-        scrub: 0.5,
+        scrub: 0.1,
         
       }
               
       
     })
-    .to(".content--videoWrap", {  scale : 8, y: "-120%", duration: 0.2, rotate :100, ease: "" })
+    .to(".content--videoWrap", {  scale : 8, y: "-120%", duration: 0.1, rotate :140, ease: "" })
    
     return mainButtonScrollTrigger;
   }
@@ -180,17 +182,70 @@ init();
                         
       }                    
     })
-    .to(".block3", { y: -305,  duration: 2, ease: "",}," <")
+    .to(".block3", { y: -105,  duration: 2, ease: "",}," <")
     .to(".mainNextContent--item11", { y : "-60%",  duration: 0.9, ease: "" },"<")
     .to(".mainNextContent--item12", { top : "-60%",  duration: 1.5, ease: "" },"<")
-    .to(".mainNextContent--item13", { y : "-90%", duration: 1.5, ease: "" },"<")
     .to(".mainNextContent--item14", { top : "-50%",  duration: 1.5, ease: "" },"<")
     .to(".mainNextContent--item15", { top : "-30%",  duration: 1.5, ease: "" },"<")
+          
+    return sectionNextTrigger_3;
+  }
+
+  function FUNCTION_sectionNextTriggerFinal() { 
+ 
+    let sectionNextTrigger_final = gsap.timeline({
+      // onComplete () {
+      //   FUNCTION_sectionNextTriggerFinalNext();
+      //   console.log("timeline completed"+  + $('.blockFinal').height());
+      // },
+      scrollTrigger: {
+
+        trigger: '.blockFinal',
+        // markers: true,
+        scrub: 3,
+        // pin : true,
+        start : "top+=100px bottom",
+        end: "top-=700px top",
+
+                        
+      }                    
+    })
+    .to(".blockFinal", { y : "0%", duration: 2, ease: "" },"<")
+    .to(".blockFinal", { width: "100%", height: "100vh", duration: 2.1, ease: "" },"<")
+    .to(".block2", { opacity : 0,  duration: 0.5, ease: "",}," <")
+    .to(".blockFinal--dim", { y:"-75%" ,duration : 0.5, })
+    .to(".blockFinal--dim", { y:"5%" ,duration : 0.5, })
+    .to(".blockFinal--dim", { x:"5%" ,duration : 0.5, })
+    .to(".blockFinal--dim", { x:"10%" ,duration : 0.5, })
+    .to(".blockFinal--dim", { x:"15%" ,duration : 0.5, })
+    .to(".blockFinal--dim", { x:"3%" ,duration : 0.5, })
+
+                 
+    return sectionNextTrigger_final;
+  }
+
+
+  function FUNCTION_sectionNextTriggerFinalNext() { 
  
 
+    let sectionNextTrigger_finalNext = gsap.timeline({
+      
+      scrollTrigger: {
+        trigger: '.blockFinal',
+        markers: true,
+        scrub: 3,
+        pin : true,
+        // start : "top+=100px bottom",
+        // end: () => "+=" + 969
+                        
+      }                    
+    })
 
-       
-    return sectionNextTrigger_3;
+    .to(".blockFinal--dim", { y:"-75%" ,duration : 0.5, },"<")
+    
+
+          
+    return sectionNextTrigger_finalNext;
   }
 
     
