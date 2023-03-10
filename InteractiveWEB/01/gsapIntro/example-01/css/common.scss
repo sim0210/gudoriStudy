@@ -71,7 +71,7 @@ section {
   display : flex;
   align-items: center; flex-direction: column;
 
-  .content { min-width: 1400px; width: 100%; height: 100%; margin: 0 auto; display: flex; align-items: center; position: relative;
+  .content { min-width: 1000px; width: 100%; height: 100%; margin: 0 auto; display: flex; align-items: center; position: relative;
   
     .mainEarth { opacity: 0; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%) scale(0.1); transform-origin: 50% 50%; }
     
@@ -171,7 +171,7 @@ section {
   }
 
 
-  .contentNext {position: absolute; z-index: 2; min-width: 1400px; width: 100%; height: 100vh; margin: 0 auto; left: 50%; top: 50%; transform: translate(-50%,-50%) scale(0); display: none; align-items: center; justify-content: center; flex-direction: row; opacity : 0;
+  .contentNext {position: absolute; z-index: 2; min-width: 1000px; width: 100%; height: 100vh; margin: 0 auto; left: 50%; top: 50%; transform: translate(-50%,-50%) scale(0); display: none; align-items: center; justify-content: center; flex-direction: row; opacity : 0;
     .textBox { width: auto; min-height: 400px; height: auto; position: relative; min-width: 500px;
     
       h1 { font-size: 70px; color: #060518; font-weight: bold; font-family: 'Poppins', sans-serif;}
@@ -228,7 +228,7 @@ section {
 
 
   
-  .theWorldContent { min-width: 1400px; width: 100%; height: 100%; margin: 0 auto; /* display: flex; align-items: center; justify-content: center; */ position: relative;
+  .theWorldContent { min-width: 1000px; width: 100%; height: 100%; margin: 0 auto; /* display: flex; align-items: center; justify-content: center; */ position: relative;
     
     &--playOn { position: relative; width: 590px; height: 88px; left: 50%; top: 0%; transform: translate(-50%); opacity: 1; text-align: center; margin-top : 200px; clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
       i { content: ''; position: relative; display: inline-block; background: url(../images/sectionWorld/PLAYON.png) no-repeat; }

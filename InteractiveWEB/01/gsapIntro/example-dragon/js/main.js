@@ -143,7 +143,7 @@ init();
       
       scrollTrigger: {
         trigger: '.block2',
-        markers: true,
+        // markers: true,
         scrub: 3,
         // pin : true
         start : "top bottom",
@@ -172,7 +172,7 @@ init();
       
       scrollTrigger: {
         trigger: '.block3',
-        markers: true,
+        // markers: true,
         scrub: 3,
         // pin : true
         start : "top bottom",

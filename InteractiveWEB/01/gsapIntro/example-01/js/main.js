@@ -23,7 +23,7 @@ function init(){
   master.add( FUNCTION_openingTL );
   master.add(FUNCTION_contentNextOBJMoving)
   master.add(FUNCTION_titleDisplayTL)
-  master.add(FUNCTION_splitTextTL)
+  // master.add(FUNCTION_splitTextTL)
   // master.add( FUNCTION_mainScrollTrigger ) ;
   // master.add( FUNCTION_poringMoving() ) ;
   // master.add( FUNCTION_openingTL_nextStep() );
@@ -37,7 +37,7 @@ function init(){
              .to(".mainEarth", { scale : 1, opacity: 1, /*rotation : 360,*/ duration: 0.5, /* ease: "slow(0.7, 0.7, false)" */ })
                             
               .set(".box", { scale : 1},"<")
-              .from(".box", { opacity: 0, left:"50%", top:"50%", ease:"power1.in", duration : 0.3, stagger: { from : "center",  amount: 0.8 } },"<")  // 흩뿌림
+              .from(".box", { opacity: 0, left:"50%", top:"50%", ease:"power1.in", duration : 0.3, stagger: { from : "center",  amount: 0.3 } },"<")  // 흩뿌림
               
               .to(".earthWrap--text1", {  opacity: 1, y:50, duration : 0.8, ease: "power1.in" },"<+=0.3")
 
@@ -106,7 +106,7 @@ function init(){
       scrollTrigger: {
         trigger: '.theWorldContent--textInfo',        
         scrub: 3,  
-        markers : true,
+        // markers : true,
         start : "top-=100 80%",
         end : "bottom 80%",
         duration : 0.8
@@ -137,7 +137,7 @@ function init(){
       scrollTrigger: {
         trigger: 'section .theWorldContent--playOn',        
         scrub: 3,  
-        markers : true,
+        // markers : true,
         start : "top-=100 80%",
         end : "bottom 80%",
         duration : 0.8
@@ -162,6 +162,7 @@ function init(){
     .to(".theWorldContent--playOn", {
         "clip-path": "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" },">")
     .from(".titWorld", { y : 100, opacity : 0 })
+    .from(".theWorldContent--textInfo p", { y : -100, opacity : 0 })
     
 
     return titleDisplayTl;
@@ -239,7 +240,7 @@ init();
             
       scrollTrigger: {
         trigger: '.main',
-        markers: true,
+        // markers: true,
         scrub: 3,
         pin: true,
                 
@@ -280,13 +281,14 @@ init();
     
     .set("section.main", { backgroundColor:"#ffffff" })
     .set("section.main .content", { backgroundColor:"#000010",  },"<" )
-    .to("section.main .content", { scale:0, overflow: "hidden", borderRadius : "1500px", duration : 1.5, ease:"none",}, "<") 
+    .set("section.main .content", { clipPath: 'circle(100%)'}, "<") 
+    .to("section.main .content", {  overflow: "hidden", clipPath: 'circle(0%)',  duration : 2.0, ease:"none",}, "<") 
     
     
     .set(".contentNext", { display : "flex"},"<+=0.7") 
     .to(".contentNext", { opacity:1, scale: 1, duration : 1.0, ease:"none",}, "<") 
     .to(".onlineEarthWrap", { x:0, y:"-50%", scale :1,  duration : 2.0, ease:"none",}, "<")
-    .to(".onlineEarthWrap--power", { scale :1,  duration : 1.0, ease:"bounce.in",},"<+=0.6")
+    .to(".onlineEarthWrap--power", { scale :1,  duration : 1.0, ease:"bounce.in",},"<+=0.9")
     .from(".objectBox", { scale :0, ease:"bounce.inOut", duration : 0.8, stagger: { amount: 0.8 } }, "<") 
     
     
@@ -295,7 +297,7 @@ init();
 
     .to(".text-online", { opacity :0, x : "-70%" , scale:0 },"<+=0.3")
     .to(".mobilePhoneWrap", { x:0, y:"-50%", scale :1, opacity : 1, duration : 2.0, ease:"none",}, "<")
-    .to(".mobilePhoneWrap--power", { scale :1,  duration : 1.0, ease:"bounce.in",}, "<+=0.5")
+    .to(".mobilePhoneWrap--power", { scale :1,  duration : 1.0, ease:"bounce.in",}, "<+=0.8")
     .to(".text-mobile", { opacity :1, x : "-50%" },"<")
 
 
@@ -304,7 +306,7 @@ init();
             
     .to(".mobilePhoneWrap", { x:"-80%", y:"20%", scale :0, opacity : 0,  duration : 2.0, ease:"none",})     
     .to(".iptvWrap", { x:100, y:"-50%", scale :1, opacity : 1, duration : 1.0, ease:"none",}, "<")
-    .to(".iptvWrap--power", { scale :1,  duration : 1.0, ease:"bounce.in",}, "<+=0.5")
+    .to(".iptvWrap--power", { scale :1,  duration : 1.0, ease:"bounce.in",}, "<+=0.8")
     .to(".text-mobile", { opacity :0, x : "-70%" , scale:0 },"<")
     .to(".text-iptv", { opacity :1, x : "-50%" },"<+=0.3")
 
