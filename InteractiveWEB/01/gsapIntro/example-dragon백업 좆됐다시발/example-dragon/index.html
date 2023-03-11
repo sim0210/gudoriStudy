@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>dragonProject</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <script type="text/javascript" src="https://imgc.gnjoy.com/common/js/jquery-1.last.min.js"></script>    
+        
+    <link rel="stylesheet" type="text/css" href="https://imgc.gnjoy.com/common/css/reset.css" />
+
+    
+    <link rel="stylesheet" type="text/css" href="./css/common.css" />
+    
+
+    <script type="text/javascript" src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+    <script type="text/javascript" src="https://assets.codepen.io/16327/CustomEase3.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script type="text/javascript" src="https://assets.codepen.io/16327/ScrollSmoother.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/gsap@3/dist/MotionPathPlugin.min.js"></script>    
+    <!-- <script type="text/javascript" src="https://assets.codepen.io/16327/SplitText3.min.js"></script> -->    
+    <script type="text/javascript" src="js/utils.js"></script>
+    
+    
+</head>
+
+<body>
+  <div class="wrap">
+
+    <section class="main">
+
+      <div class="content">
+
+        <img class="mainTitle text-experience" src="images/tit-EXPERIENCE.png" alt="EXPERIENCE"> 
+
+        <div class="centerTextWrap"> 
+          
+          <img class="mainTitle text-playon" src="images/tit-play-after.png" alt="play"> 
+          <img class="mainTitle text-on" src="images/tit-on.png" alt="on"> 
+        </div>
+
+        <div class="content--videoWrap">
+          <video id="mainVideo" autoplay muted loop> <source src="images/mainVideo.mp4" type="video/mp4"> </video>
+          <img class="img-svgPlay" src="images/svg-play.svg" alt="playButton"> 
+        </div>
+
+        <div class="bottomTextWrap"> 
+          <img class="mainTitle text-with" src="images/tit-with.png" alt="with"> 
+          <img class="mainTitle text-hypen" src="images/tit-hypen.png" alt="hypen"> 
+          <img class="mainTitle text-gravity" src="images/tit-mainGravity.png" alt="GRAVITY"> 
+        </div>
+          
+
+        <svg height="0" width="0" class="svg-clip" style="position:absolute">
+          <defs>
+               <clipPath id="clip">
+                 <path d="m147.81,73.84L38.31,3.91C30.64-.98,20.92-1.31,12.94,3.06,4.96,7.43,0,15.8,0,24.9v139.86c0,9.09,4.96,17.47,12.94,21.83,3.74,2.05,7.85,3.06,11.96,3.06,4.67,0,9.33-1.31,13.41-3.91l109.5-69.93c7.16-4.57,11.5-12.48,11.5-20.98s-4.33-16.41-11.5-20.98Z" />
+              </clipPath>
+          </defs>
+        </svg>
+      </div>
+
+
+      
+      
+    </section>
+
+
+    
+
+  
+    <section class="sectionNext">
+      <div class="mainNextContent">
+
+
+        <div class="block1">
+          <img class=" mainNextContent--item1 lineLeft" src="images/section2/img-section2Item-1.png" alt="">
+          <img class=" mainNextContent--item2 lineLeftSmall" src="images/section2/img-section2Item-2.png" alt="">
+          <img  class=" mainNextContent--item3 lineCenter" src="images/section2/img-section2Item-3.png" alt="">
+          <img class=" mainNextContent--item4 lineRightSmall" src="images/section2/img-section2Item-4.png" alt="">
+          <img class=" mainNextContent--item5 lineRight" src="images/section2/img-section2Item-5.png" alt="">
+        </div>
+
+
+        <div class="block2">
+          <img class="mainNextContent--item6 lineLeft" src="images/section2/img-section2Item-5.png" alt="">
+          <img class="mainNextContent--item7 lineLeftSmall" src="images/section2/img-section2Item-4.png" alt="">
+          <img class="mainNextContent--item8 lineCenter" src="images/section2/img-section2Item-3.png" alt="">
+          <img class="mainNextContent--item9 lineRightSmall" src="images/section2/img-section2Item-2.png" alt="">
+          <img class="mainNextContent--item10 lineRight" src="images/section2/img-section2Item-1.png" alt="">
+        </div>
+
+
+        <div class="block3">
+
+          <img class="mainNextContent--item11 lineLeft" src="images/section2/img-section2Item-1.png" alt="">
+          <img class="mainNextContent--item12 lineLeftSmall" src="images/section2/img-section2Item-2.png" alt="">
+          
+          <img class="mainNextContent--item14 lineRightSmall" src="images/section2/img-section2Item-4.png" alt="">
+          <img class="mainNextContent--item15 lineRight" src="images/section2/img-section2Item-5.png" alt="">
+          
+        </div>
+
+        <div class="blockFinal">
+          <h1>
+            PLAY ON <br />
+            GRAVITY Games
+          </h1>
+
+          <p>
+            그라비티 게임은 전세계를 사로잡은 라그나로크IP를 기반으로 장르를 확장하고 <br />
+            새로운 IP 개발을 통한 다양한 콘텐츠로 더욱 넓은 세상을 향해 늘 도전합니다.
+          </p>
+          <img class="" src="images/section2/img-section2Item-final.png" alt="">
+
+          <div class="blockFinal--dim"></div>
+        </div>
+
+        <!-- <div class="block4">
+
+          <img class="mainNextContent--item11 lineLeft" src="images/section2/img-section2Item-1.png" alt="">
+          <img class="mainNextContent--item12 lineLeftSmall" src="images/section2/img-section2Item-2.png" alt="">
+          <img class="mainNextContent--item13 lineCenter" src="images/section2/img-section2Item-3.png" alt="">
+          <img class="mainNextContent--item14 lineRightSmall" src="images/section2/img-section2Item-4.png" alt="">
+          <img class="mainNextContent--item15 lineRight" src="images/section2/img-section2Item-5.png" alt="">
+        </div> -->
+
+
+        
+      </div>
+
+    </section>
+
+    <section class="sectionNext">
+      <div class="mainNextContent">
+      </div>  
+    </section>
+
+  </div>
+
+
+  <script type="text/javascript" src="./js/resource-path.js"></script>
+  <script type="text/javascript" src="./js/main.js"></script>
+</body>
+</html>

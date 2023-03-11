@@ -240,7 +240,7 @@ init();
             
       scrollTrigger: {
         trigger: '.main',
-        // markers: true,
+        markers: true,
         scrub: 3,
         pin: true,
                 

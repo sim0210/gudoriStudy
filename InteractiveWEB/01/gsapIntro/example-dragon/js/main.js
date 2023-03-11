@@ -21,16 +21,11 @@ function init(){
   
   // 총괄 애니메이션
   const master = gsap.timeline();
-  master.add( FUNCTION_openingTL );  
-  master.add( FUNCTION_sectionNextTrigger );
-  master.add( FUNCTION_sectionNextTrigger2 );
-  master.add( FUNCTION_sectionNextTrigger3 );
-  master.add( FUNCTION_sectionNextTriggerFinal );
-  
-  
-  
+  master.add( FUNCTION_openingTL);  
+  master.add(FUNCTION_imagesBlockST)
 
   
+    
   function FUNCTION_openingTL(){
     let openingTL = gsap.timeline()
     .to("section.main", { opacity: 1, duration: 0.5, ease: "power4.in" })  
@@ -64,18 +59,6 @@ function init(){
 
   }                         
 
-
-  // img src 변경
-  // gsap.set(img, { attr: { src: newSRC } });
-
-
-
-
-
-
-
-
-
 };
 
 init();
@@ -86,183 +69,118 @@ init();
   
 
   function FUNCTION_mainButtonScrollTrigger() { 
-
     
-
     let mainButtonScrollTrigger = gsap.timeline({
             
       scrollTrigger: {
         trigger: '.sectionNext',
         // markers: true,
-        scrub: 0.1,
-        
-      }
-              
+        scrub: 0.5,
+      
+      }              
       
     })
-    .to(".content--videoWrap", {  scale : 8, y: "-120%", duration: 0.1, rotate :140, ease: "" })
-   
+    .to(".main", { y: "20%", duration: 0.5, ease: "" },"<")  
+    .to(".content--videoWrap", { scale : 6, y: "-120%", duration: 0.3, rotate :90, ease: "" },"<")
+    .to(".mainNextContent--item2", { top: "12%", duration: 0.5, ease: "" },"<")
+    .to(".mainNextContent--item4", { top: "38%", duration: 0.5, ease: "" },"<")
+       
     return mainButtonScrollTrigger;
   }
   
 
-
-  function FUNCTION_sectionNextTrigger() { 
-
- 
-
-    let sectionNextTrigger_1 = gsap.timeline({
+  
+  function FUNCTION_imagesBlockST() { 
+    
+    let blockTrigger = gsap.timeline({
       
+            
       scrollTrigger: {
         trigger: '.sectionNext',
-        // markers: true,
-        scrub: 3,
-        // pin : true
-        // start : "center center",
-        // end: "bottom top"
-                        
-      }
-              
-      
-    })
-    .to(".block1", { y: -405,  duration: 2, ease: "",}," <")
-
-    .from(".block1 .lineLeft", { top: "130%",  duration: 0.5, ease: "",}," <")
-    .from(".block1 .lineLeftSmall", { top: "155%",  duration: 0.8, ease: "" }," <")
-    .from(".block1 .lineCenter", { top: "100%",  duration: 1.8, ease: "" }," <+=0.5")
-    .from(".block1 .lineRightSmall", { top: "125%",  duration: 1.5, ease: "" }," <")
-    .from(".block1 .lineRight", { top: "150%",  duration: 0.5, ease: "" }," <")
-    
-       
-    return sectionNextTrigger_1;
-  }
-
-  function FUNCTION_sectionNextTrigger2() { 
-
- 
-
-    let sectionNextTrigger_2 = gsap.timeline({
-      
-      scrollTrigger: {
-        trigger: '.block2',
-        // markers: true,
-        scrub: 3,
-        // pin : true
-        start : "top bottom",
-        end: "top top"
-                        
-      }                    
-    })
-    .to(".block2", { y: -105,  duration: 2, ease: "",}," <")
-    .to(".mainNextContent--item6", { y : "-60%",  duration: 0.9, ease: "" },"<")
-    .to(".mainNextContent--item7", { top : "-60%",  duration: 1.5, ease: "" },"<")
-    .to(".mainNextContent--item8", { y : "-80%", duration: 1.5, ease: "" },"<")
-    .to(".mainNextContent--item9", { top : "-50%",  duration: 1.5, ease: "" },"<")
-    .to(".mainNextContent--item10", { top : "-30%",  duration: 1.5, ease: "" },"<")
- 
-
-
-       
-    return sectionNextTrigger_2;
-  }
-
-  function FUNCTION_sectionNextTrigger3() { 
-
- 
-
-    let sectionNextTrigger_3 = gsap.timeline({
-      
-      scrollTrigger: {
-        trigger: '.block3',
-        // markers: true,
-        scrub: 3,
-        // pin : true
-        start : "top bottom",
-        end: "top top"
-                        
-      }                    
-    })
-    .to(".block3", { y: -105,  duration: 2, ease: "",}," <")
-    .to(".mainNextContent--item11", { y : "-60%",  duration: 0.9, ease: "" },"<")
-    .to(".mainNextContent--item12", { top : "-60%",  duration: 1.5, ease: "" },"<")
-    .to(".mainNextContent--item14", { top : "-50%",  duration: 1.5, ease: "" },"<")
-    .to(".mainNextContent--item15", { top : "-30%",  duration: 1.5, ease: "" },"<")
-          
-    return sectionNextTrigger_3;
-  }
-
-  function FUNCTION_sectionNextTriggerFinal() { 
- 
-    let sectionNextTrigger_final = gsap.timeline({
-      // onComplete () {
-      //   FUNCTION_sectionNextTriggerFinalNext();
-      //   console.log("timeline completed"+  + $('.blockFinal').height());
-      // },
-      scrollTrigger: {
-
-        trigger: '.blockFinal',
-        // markers: true,
-        scrub: 3,
-        // pin : true,
-        start : "top+=100px bottom",
-        end: "top-=700px top",
-
-                        
-      }                    
-    })
-    .to(".blockFinal", { y : "0%", duration: 2, ease: "" },"<")
-    .to(".blockFinal", { width: "100%", height: "100vh", duration: 2.1, ease: "" },"<")
-    .to(".block2", { opacity : 0,  duration: 0.5, ease: "",}," <")
-    .to(".blockFinal--dim", { y:"-75%" ,duration : 0.5, })
-    .to(".blockFinal--dim", { y:"5%" ,duration : 0.5, })
-    .to(".blockFinal--dim", { x:"5%" ,duration : 0.5, })
-    .to(".blockFinal--dim", { x:"10%" ,duration : 0.5, })
-    .to(".blockFinal--dim", { x:"15%" ,duration : 0.5, })
-    .to(".blockFinal--dim", { x:"3%" ,duration : 0.5, })
-
-                 
-    return sectionNextTrigger_final;
-  }
-
-
-  function FUNCTION_sectionNextTriggerFinalNext() { 
- 
-
-    let sectionNextTrigger_finalNext = gsap.timeline({
-      
-      scrollTrigger: {
-        trigger: '.blockFinal',
         markers: true,
-        scrub: 3,
+        scrub: 0.5,
         pin : true,
-        // start : "top+=100px bottom",
-        // end: () => "+=" + 969
-                        
-      }                    
-    })
 
-    .to(".blockFinal--dim", { y:"-75%" ,duration : 0.5, },"<")
+        end: () => "+=" + document.querySelector(".sectionNext").offsetHeight*3.5
+      
+      }              
+      
+    })
+    .to(".block1", { top : "-90%", ease : "none",},"<")
+    .to(".block2", { top : "-100%", ease : "none",},"<")
+    .to(".mainNextContent--item7", { top : "6%", ease : "none",},"<")
+    .to(".mainNextContent--item9", { top : "6%", ease : "none",},"<")
+    .to(".mainNextContent--item10", { top : "15%", ease : "none",},"<")
+    .to(".block3", { top : "-110%", ease : "none",},"<")
+    .from(".mainNextContent--item12", { top : "79%", ease : "none",},"<")
+    .from(".mainNextContent--item14", { top : "60%", ease : "none",},"<")
+    .to(".block4", { top : "-89%", ease : "none",},"<")
+    
+    
+    // .to(".block3", { top : "-129%", ease : "none",},"<+=0.5")
+    // .to(".block4", { top : "-110%", ease : "none",},"<")
+
+    // .set(".blockFinal", {  xPercent:-50, yPercent:-50, },"<")
+
+
+    // .set(".block4", { width : "100%", height :"100vh", duration: 0.5, ease: "" },"<")
+
+    .set(".blockFinal", { width : "400px",duration: 0.5, ease: "" },"<")
+    .to(".blockFinal", { xPercent:-50, yPercent:-66, width : "100%", height : "100vh",  duration: 0.5, ease: "" },"<+=0.5")
+    .to(".block3 img", { top : "0",  duration: 0.8, ease: "", stagger : {  amount : 0.5 } },"<")
+
+    .to(".mainNextContent--item17", { top : "10%", ease : "none",},"<")
+    .to(".mainNextContent--item19", { top : "6%", ease : "none",},"<")
+    
+    .set(".blockFinal--dim", { display :"block", ease: "" },"<+=0.2")
+    .to(".blockFinal--dim", {  top :"-47%", ease: "" },"<")
+
+    .to(".blockFinal--title", { opacity :1, y:-95, ease: "" },"<+=0.5")
+    .to(".blockFinal--explanation", { opacity :1, y:-92, ease: "" },"<+=0.5")
+
+    .to(".blockFinal--onlineBox", { opacity :1, xPercent : -50, y:10, ease: "" },"<+=0.7")
+    .to(".blockFinal--mobileBox", { opacity :1, xPercent : -50, y:10, ease: "" },"<")
+    .to(".blockFinal--ipTVBox", { opacity :1, xPercent : -50, y:10, ease: "" },"<")
+
+    .to(".blockFinal--onlineBox", { left : "5%", duration : 0.5, ease: "none", scale : 0.7 },"<+=0.7")
+    .to(".blockFinal--mobileBox", { left : "50%", duration : 0.5, ease: "none", scale : 1 },"<")
+    .to(".blockFinal--ipTVBox", { left : "95%", duration : 0.5, ease: "none", scale : 0.7 },"<")
+            
+
+    .to(".blockFinal--onlineBox", { left : "-50%", duration : 0.5, ease: "none", scale : 0.7 },"<+=0.7")
+    .to(".blockFinal--mobileBox", { left : "-10%", duration : 0.5, ease: "none", scale : 0.7 },"<")
+    .to(".blockFinal--ipTVBox", { left : "50%", duration : 0.5, ease: "none", scale : 1 },"<")
+            
     
 
-          
-    return sectionNextTrigger_finalNext;
+   
+    return blockTrigger;
   }
 
-    
-  // 랜덤으로 여러군대 뿌려주기
-  // gsap.to(".notes", {
-  //   y: gsap.utils.random(-50, -100, 10, true),
-  //   x: gsap.utils.random(-50, 50, 25, true),
-  //   opacity: 1,
-  //   duration: gsap.utils.random(1.5, 3, 1.5, true),
-  //   stagger: {
-  //     each: 0.5,
-  //     ease: "sine.in",
-  //     repeat: -1
-  //   }
-  // });
 
 
 
-  // play on 랜더링 부분 커서 관련 
-  let cursor = gsap.to('.cursor', {opacity: 0, ease: "power2.inOut", repeat: -1});
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var parent = document.querySelector('.splitview'),
+        topPanel = parent.querySelector('.top'),
+        handle = parent.querySelector('.handle'),
+        skewHack = 0,
+        delta = 0;
+
+    // If the parent has .skewed class, set the skewHack var.
+    if (parent.className.indexOf('skewed') != -1) {
+        skewHack = 1000;
+    }
+
+    parent.addEventListener('mousemove', function(event) {
+        // Get the delta between the mouse position and center point.
+        delta = (event.clientX - window.innerWidth / 2) * 0.5;
+
+        // Move the handle.
+        handle.style.left = event.clientX + delta + 'px';
+
+        // Adjust the top panel width.
+        topPanel.style.width = event.clientX + skewHack + delta + 'px';
+    });
+});
