@@ -16,6 +16,12 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "GmarketSansBold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 body { /* overflow: hidden;*/ }
 
 section {
@@ -151,7 +157,7 @@ section .mainNextContent div.blockFinal {
   z-index: 8;
 }
 section .mainNextContent div.blockFinal h1 {
-  font-family: "GmarketSansMedium";
+  font-family: "GmarketSansBold";
   font-size: 70px;
   position: absolute;
   z-index: 9;
@@ -195,23 +201,101 @@ section .mainNextContent div.blockFinal--onlineBox {
   opacity: 0;
   transform-origin: 50% 50%;
 }
+section .mainNextContent div.blockFinal--onlineBox h3 {
+  opacity: 1;
+  text-align: left;
+  left: 41%;
+  transform: translate(0, 0);
+  top: 15%;
+  font-size: 41px;
+  line-height: 1.4;
+  position: absolute;
+  font-weight: bold;
+  z-index: 2;
+}
+section .mainNextContent div.blockFinal--onlineBox p {
+  opacity: 1;
+  text-align: left;
+  left: 41%;
+  transform: translate(0, 0);
+  top: 29%;
+  font-size: 18px;
+  line-height: 1.4;
+}
+section .mainNextContent div.blockFinal--onlineBox a.btn-more {
+  left: 41%;
+  position: absolute;
+  top: 50%;
+}
 section .mainNextContent div.blockFinal--mobileBox {
   position: absolute;
   top: 65%;
   left: 95%;
-  transform: translate(-50%, -50%) scale(0.7);
+  transform: translate(-50%, -50%) scale(0.6);
   z-index: 5;
   opacity: 0;
   transform-origin: 50% 50%;
+}
+section .mainNextContent div.blockFinal--mobileBox h3 {
+  opacity: 1;
+  text-align: left;
+  left: 41%;
+  transform: translate(0, 0);
+  top: 15%;
+  font-size: 41px;
+  line-height: 1.4;
+  position: absolute;
+  font-weight: bold;
+  z-index: 2;
+}
+section .mainNextContent div.blockFinal--mobileBox p {
+  opacity: 1;
+  text-align: left;
+  left: 41%;
+  transform: translate(0, 0);
+  top: 29%;
+  font-size: 18px;
+  line-height: 1.4;
+}
+section .mainNextContent div.blockFinal--mobileBox a.btn-more {
+  left: 41%;
+  position: absolute;
+  top: 50%;
 }
 section .mainNextContent div.blockFinal--ipTVBox {
   position: absolute;
   top: 65%;
   left: 130%;
-  transform: translate(-50%, -50%) scale(0.7);
+  transform: translate(-50%, -50%) scale(0.6);
   z-index: 5;
   opacity: 0;
   transform-origin: 50% 50%;
+}
+section .mainNextContent div.blockFinal--ipTVBox h3 {
+  opacity: 1;
+  text-align: left;
+  left: 41%;
+  transform: translate(0, 0);
+  top: 12%;
+  font-size: 41px;
+  line-height: 1.4;
+  position: absolute;
+  font-weight: bold;
+  z-index: 2;
+}
+section .mainNextContent div.blockFinal--ipTVBox p {
+  opacity: 1;
+  text-align: left;
+  left: 41%;
+  transform: translate(0, 0);
+  top: 27%;
+  font-size: 18px;
+  line-height: 1.4;
+}
+section .mainNextContent div.blockFinal--ipTVBox a.btn-more {
+  left: 41%;
+  position: absolute;
+  top: 50%;
 }
 section .mainNextContent div.blockFinal--dim {
   display: none;
@@ -354,7 +438,7 @@ section .mainNextContent--item20 {
   z-index: 3;
 }
 section .sectionRecruit--title {
-  font-family: "GmarketSansMedium";
+  font-family: "GmarketSansBold";
   font-size: 70px;
   position: relative;
   z-index: 9;

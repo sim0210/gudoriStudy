@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother, MotionPathPlugin);
 
 // 스크롤 스무터 구동.
 let smoother = ScrollSmoother.create({
-    smooth: 3,   
+    smooth: 1,   
     effects: true
   });
 
@@ -116,14 +116,6 @@ init();
     .from(".mainNextContent--item14", { top : "60%", ease : "none",},"<")
     .to(".block4", { top : "-89%", ease : "none",},"<")
     
-    
-    // .to(".block3", { top : "-129%", ease : "none",},"<+=0.5")
-    // .to(".block4", { top : "-110%", ease : "none",},"<")
-
-    // .set(".blockFinal", {  xPercent:-50, yPercent:-50, },"<")
-
-
-    // .set(".block4", { width : "100%", height :"100vh", duration: 0.5, ease: "" },"<")
 
     .set(".blockFinal", { width : "400px",duration: 0.5, ease: "" },"<")
     .to(".blockFinal", { xPercent:-50, yPercent:-66, width : "100%", height : "100vh",  duration: 0.5, ease: "" },"<+=0.5")
@@ -142,14 +134,20 @@ init();
     .to(".blockFinal--mobileBox", { opacity :1, xPercent : -50, y:10, ease: "" },"<")
     .to(".blockFinal--ipTVBox", { opacity :1, xPercent : -50, y:10, ease: "" },"<")
 
-    .to(".blockFinal--onlineBox", { left : "5%", duration : 0.5, ease: "none", scale : 0.7 },"<+=0.7")
+    .to(".blockFinal--onlineBox", { left : "5%", duration : 0.5, ease: "none", scale : 0.6 },"<+=0.7")
     .to(".blockFinal--mobileBox", { left : "50%", duration : 0.5, ease: "none", scale : 1 },"<")
-    .to(".blockFinal--ipTVBox", { left : "95%", duration : 0.5, ease: "none", scale : 0.7 },"<")
+    .to(".blockFinal--ipTVBox", { left : "95%", duration : 0.5, ease: "none", scale : 0.6 },"<")
             
 
-    .to(".blockFinal--onlineBox", { left : "-50%", duration : 0.5, ease: "none", scale : 0.7 },"<+=0.7")
-    .to(".blockFinal--mobileBox", { left : "-10%", duration : 0.5, ease: "none", scale : 0.7 },"<")
+    .to(".blockFinal--onlineBox", { left : "-50%", duration : 0.5, ease: "none", scale : 0.6 },"<+=0.7")
+    .to(".blockFinal--mobileBox", { left : "-10%", duration : 0.5, ease: "none", scale : 0.6 },"<")
     .to(".blockFinal--ipTVBox", { left : "50%", duration : 0.5, ease: "none", scale : 1 },"<")
+    
+
+
+    // .to(".blockFinal--onlineBox", { left : "-90%", duration : 0.5, ease: "none", scale : 0.6 },"<")
+    // .to(".blockFinal--mobileBox", { left : "-50%", duration : 0.5, ease: "none", scale : 0.6 },"<")
+    // .to(".blockFinal--ipTVBox", { left : "-10%", duration : 0.5, ease: "none", scale : 0.6 },"<")
             
     
 
