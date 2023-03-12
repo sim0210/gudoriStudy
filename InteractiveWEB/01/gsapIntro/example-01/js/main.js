@@ -285,6 +285,7 @@ init();
     .to(".recruitEarthWrap--imgMainLine2", {  opacity: 0.4, scale : 1, duration : 0.3, },"<+=0.2")
     .to(".recruitEarthWrap--imgcenterLight", {  opacity: 1, scale : 1, duration : 0.3, },"<")
     .to(".recruitEarthWrap--gravitySimbol", {  opacity: 1, duration : 0.5, },"<+=0.4")
+    .to(".recruitBtnWrap li", { opacity: 1, scale : 1,  ease:"power1.in", duration : 0.5, stagger: { from : "center",  amount: 0.5 } },"<+=0.5") 
     
 
     return recruitTitleDisplayTl;

@@ -1325,8 +1325,9 @@ section .recruitContent .recruitEarthWrap ul.recruitBtnWrap {
 }
 section .recruitContent .recruitEarthWrap ul.recruitBtnWrap li {
   cursor: pointer;
-  transition: 0.5s all;
   position: absolute;
+  opacity: 0;
+  transform: scale(0);
 }
 section .recruitContent .recruitEarthWrap ul.recruitBtnWrap li a {
   display: block;
