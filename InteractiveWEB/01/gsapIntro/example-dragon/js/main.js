@@ -22,7 +22,8 @@ function init(){
   // 총괄 애니메이션
   const master = gsap.timeline();
   master.add( FUNCTION_openingTL);  
-  master.add(FUNCTION_imagesBlockST)
+  master.add(FUNCTION_imagesBlockST);
+  master.add(FUNCTION_theWorldST);
 
   
     
@@ -156,6 +157,39 @@ init();
   }
 
 
+
+  
+  function FUNCTION_theWorldST() { 
+    
+    let theWorldST = gsap.timeline({
+      
+            
+      scrollTrigger: {
+        trigger: '.sectionTheWorld',
+        markers: true,
+        scrub: 3,
+        pin : true,        
+        end: () => "+=" + document.querySelector(".sectionTheWorld").offsetHeight*3
+      
+      }              
+      
+    })
+
+    
+    .to('#sectionTheWorld__itemWrap--item1',{ duration : 5, className : "" })
+    .to('#sectionTheWorld__itemWrap--item1',{ duration : 20, className : "active" })
+    .to('#sectionTheWorld__itemWrap--item1',{ duration : 5, className : "" })
+    
+    .to('#sectionTheWorld__itemWrap--item2',{ duration : 5, className : "" })
+    .to('#sectionTheWorld__itemWrap--item2',{ duration : 20, className : "active" })
+    .to('#sectionTheWorld__itemWrap--item2',{ duration : 5, className : "" })
+    
+    .to('#sectionTheWorld__itemWrap--item3',{ duration : 5, className : "" })
+    .to('#sectionTheWorld__itemWrap--item3',{ duration : 20, className : "active" })
+    .to('#sectionTheWorld__itemWrap--item3',{ duration : 5, className : "" })
+
+    return theWorldST;
+  }
 
 
 

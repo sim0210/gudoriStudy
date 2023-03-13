@@ -30,6 +30,49 @@
 
 body { /* overflow: hidden;*/  }
 
+
+footer { 
+  width: 100%; height: 390px; display: flex; position: relative; z-index: 99; justify-content: space-between; padding: 50px 75px; border-top: 1px solid #1f1e30; background: #060518;
+
+  .nav-logo { width: 357px; height: 69px; background: url(../images/footer-logo.png) no-repeat; transition: 0.5s all; }
+  ul.footerNav {
+    display: flex; height: 100%;
+    li {    
+       height: auto; position: relative;  min-width: 150px; transition: 0.5s all;
+      a { color: #fff; font-size: 16px;  display: flex; width: 100%; margin-bottom: 15px; opacity: 0.6; padding: 0 20px; justify-content: center; transition: 0.5s all; font-family: 'Pretendard-Regular';
+        &.title { font-size: 20px; font-weight: bold; font-family: 'Poppins'; opacity: 1; }
+        &:hover { opacity: 1; }
+        
+      }
+      // &:after { content: ""; position: absolute; bottom: 0; width: 0%; transform-origin: 50% 50%; height: 2px; background-color: #00b0f0; left: 50%; transform: translateX(-50%); transition: 0.5s all; }
+
+      // &:hover { 
+      //   &:after { width: 100%; transition: 0.5 all; }
+      // }
+      // &.active { 
+      //   &:after { width: 100%; transition: 0.5 all; }
+      // }
+
+    }
+
+  }  
+  ul.contactWrap {
+    display: flex; height: 100%; 
+    li {
+      margin: 0 40px; max-height: 35px;
+      a { color: #fff; font-size: 18px; font-family: 'Poppins'; font-weight: bold; 
+        
+      }
+      i.arrow { content: ""; width: 11px; height: 6px; display: inline-block; position: relative; right : -35px; background: url(../images/lang-arrow.png) no-repeat; vertical-align: middle; }
+
+      &.familySite { border-bottom: 1px solid rgba(255, 255, 255, 0.6); width: 150px; position: relative;  }
+    }
+  }
+
+
+  
+}
+
 section {
   opacity : 1;
   background-color : #fff;
@@ -116,7 +159,7 @@ section {
           top: 70%;
           left: 0;
           width: 100%;
-          height: 160vh;
+          height: 166vh;
           background: linear-gradient(to bottom, rgba(133, 133, 133, 0) 0%, rgba(133, 133, 133, 0.013) 4.8%, rgba(133, 133, 133, 0.049) 9.8%, rgba(133, 133, 133, 0.104) 14.8%, rgba(133, 133, 133, 0.175) 20%, rgba(133, 133, 133, 0.259) 25.5%, rgba(133, 133, 133, 0.352) 31.2%, rgba(133, 133, 133, 0.45) 37.1%, rgba(133, 133, 133, 0.55) 43.4%, rgba(133, 133, 133, 0.648) 50.1%, rgba(133, 133, 133, 0.741) 57.2%, rgba(133, 133, 133, 0.825) 64.7%, rgba(133, 133, 133, 0.896) 72.7%, rgba(133, 133, 133, 0.951) 81.2%, rgba(133, 133, 133, 0.987) 90.3%, #fff 100%);
           &:after { content: ""; display: block; position: absolute; left: 0; bottom: -2px; width: 100%; height: 4px; background-color: #fff; }
       
@@ -153,7 +196,102 @@ section {
     &--item20 { position: relative; right: 2%; top: 24%; z-index: 3; }
 
   }
+  
+  &.sectionTheWorld {
+    background: #000;}
 
+
+  .sectionTheWorld {
+    background: #000;
+    &--title { color: #fff; font-family: "GmarketSansBold"; font-size: 70px; position: relative; z-index: 9; font-weight: 1000; left: 0%; top: 0%; transform: translate(0%,0%); text-align: center; line-height: 1.0; opacity: 1; }
+    &--explanation { color: #fff; font-size: 24px; position: relative; margin-top: 30px; z-index: 9; font-weight: 500; left: 0%; top: 0%; transform: translate(0%, 0%); text-align: center; line-height: 1.2;  opacity: 1; }
+    
+    &__itemWrap {
+      display: flex; justify-items: center; align-items: center; height: auto; width: 100%; justify-content: center; margin-top: 35px;
+      ul {
+
+        min-width: 1350px;
+        
+        li { 
+          * { transition: 0.5s ease-in-out; }
+          transform: scale(1); transform-origin: 50% 50%; background-color: #000; border: 3px solid #747474; padding: 0px 50px 0px 0; box-sizing: border-box; display: flex; align-items: center; border-radius: 50px; position: relative; margin-bottom: 21px;
+          
+          i.img-nasdaq { content: ''; position: relative; width: 135px; height: 130px; left: -2%; top: 12px; background: url(../images/sectionTheWorld/img-nasdaq.png) no-repeat; }
+          i.img-filings { content: ''; position: relative; width: 135px; height: 130px; left: -2%; top: 12px; background: url(../images/sectionTheWorld/img-filings.png) no-repeat; }
+          i.img-news { content: ''; position: relative; width: 135px; height: 130px; left: -2%; top: 12px; background: url(../images/sectionTheWorld/img-news.png) no-repeat; }
+
+          p.content { margin-left: 65px; font-size: 20px; font-weight: bold;  color: #fff; display: inline-block; }
+          p.cost {  margin-left: 65px; font-size: 33px; font-weight: bold;  color: #fff; span { margin-left: 74px; font-size: 24px; position: relative; top: -17px; } }
+          p.date {  margin-left: 65px; font-size: 15px; font-weight: 500;  color: #747474; position: absolute; left: 21.5%; top: 54%; }
+          p.bottomText {  margin-left: 65px; font-size: 25px; font-weight: 800; font-family: 'Pretendard-Regular'; color: #fff;
+            span { font-size: inherit; &:first-child { margin-right: 35px; } }
+            i.icon-triangle { content: ''; display: inline-block; margin: 0 6px; width: 27px; height: 23px; vertical-align: middle;  background: url(../images/sectionTheWorld/icon-triangle.png) no-repeat; }
+          }
+          a.btn-more { position: absolute; right: 6%; top: 50%; transform: translateY(-50%); background: url(../images/section2/btn-more-white.png) no-repeat; }
+
+          &:hover { 
+            a.btn-more { background: url(../images/section2/btn-more-hover.png) no-repeat; }
+          }
+          
+
+
+          &.active {
+            transform: scale(1.1); transform-origin: 50% 50%; background-color: #fff; border: 3px solid rgba(0,0,0,0); padding: 10px 50px 10px 0; box-sizing: border-box; display: flex; align-items: center; border-radius: 50px; position: relative; margin-bottom: 31px;
+
+            i.img-nasdaq { content: ''; position: relative; width: 203px; height: 198px; left: -2%; top: 12px; background: url(../images/sectionTheWorld/img-nasdaq-big.png) no-repeat; }
+            i.img-filings { content: ''; position: relative; width: 250px; height: 198px; left: -2%; top: 12px; background: url(../images/sectionTheWorld/img-filings-big.png) no-repeat; }
+            i.img-news { content: ''; position: relative; width: 250px; height: 198px; left: -2%; top: 12px; background: url(../images/sectionTheWorld/img-news-big.png) no-repeat; }
+
+            p.content { margin-left: 65px; font-size: 28px; font-weight: bold;  color: #000; display: inline-block; }
+            p.cost {  margin-left: 65px; font-size: 36px; font-weight: bold;  color: #000; span { margin-left: 51px; font-size: 50px; position: relative; top: -28px; } }
+            p.date {  margin-left: 65px; font-size: 22px; font-weight: 500;  color: #747474; position: absolute; left: 26.5%; top: 54%; }
+            p.bottomText {  margin-left: 65px; font-size: 30px; font-weight: 800; font-family: 'Pretendard-Regular'; color: #000;
+              span { font-size: inherit; &:first-child { margin-right: 35px; } }
+              i.icon-triangle { content: ''; display: inline-block; margin: 0 6px; width: 27px; height: 23px; vertical-align: middle;  background: url(../images/sectionTheWorld/icon-triangle.png) no-repeat; }
+            }
+            a.btn-more { position: absolute; right: 6%; top: 50%; transform: translateY(-50%); background: url(../images/section2/btn-more.png) no-repeat;  }
+  
+            &:hover { 
+              a.btn-more { background: url(../images/section2/btn-more-hover.png) no-repeat; }
+            }
+          }
+
+
+        }
+
+
+
+
+      }
+
+
+    }
+
+  }
+
+  // .nasdaqWrap { width: 100%; height: 100%; border: 1px solid #46626f; box-sizing: border-box; padding : 65px 80px 65px 0; display: flex; justify-content: flex-end;
+  //   &__content { min-width: 530px; text-align: center;
+  //     p.cost { transition: 0.5s all; margin: 20px 0; font-size: 48px; font-weight: bold; font-family: 'Poppins'; color: #fff; span { font-size: 95px; } }
+  //     p.date { transition: 0.5s all; margin: 20px 0; font-size: 20px; font-weight: 100; font-family: 'Poppins'; color: #fff; }
+  //     p.bottomText { transition: 0.5s all; margin: 20px 0; font-size: 22px; font-weight: 100; font-family: 'Pretendard-Regular'; color: #fff;
+
+  //       span { font-size: inherit; &:first-child { margin-right: 35px; } }
+  //       i.icon-triangle { content: ''; display: inline-block; margin: 0 6px; width: 22px; height: 19px; vertical-align: middle;  background: url(../images/sectionWorld/icon-triangle.png) no-repeat; }
+  //     }
+  //   }
+  // }
+
+  // &:hover {
+  //   background: #fff;
+  //   .nasdaqWrap { 
+  //     &__content { 
+  //       p.cost {  color: #000;  }
+  //       p.date {  color: #000; }
+  //       p.bottomText {  color: #000;                                  
+  //       }
+  //     }
+  //   }          
+  // }
 
   .sectionRecruit { 
 
@@ -315,7 +453,7 @@ a.btn-more {  width: 82px; height: 97px; background: url(../images/section2/btn-
 .skewed .top {
   transform: skew(-30deg);
   margin-left: -1000px;
-  width: calc(50vw + 1000px);
+  width: calc(50vw + 905px);
 }
 
 .skewed .top .imgContent {

@@ -8,10 +8,10 @@ document.addEventListener("DOMContentLoaded", function(){
   // 헤더 액션.
   $('header').hover(function(e){
     $(this).addClass('active');
-    $('.subMenu').addClass('active');
+    $('.subMenu').css('width',"100%");
     e.stopPropagation();
   },function(){
-    $('.subMenu').removeClass('active');
+    $('.subMenu').css('width',"0%");
     $(this).removeClass('active');
   })
   
@@ -48,12 +48,14 @@ function init(){
   
   // 총괄 애니메이션
   const master = gsap.timeline();
-  master.add( FUNCTION_openingTL, { onComplete : console.log('오프닝완료') });
-  master.add(FUNCTION_contentNextOBJMoving , { onComplete : console.log('통통튀는 오브젝트들 완료') });
-  master.add(FUNCTION_titleDisplayTL, { onComplete : console.log('더월드 스크롤트리거 불러옴') });
-  master.add(FUNCTION_recruitTitleDisplayTL, { onComplete : console.log('리크루투 불러옴') });
+  master.add( FUNCTION_openingTL );
+  master.add(FUNCTION_contentNextOBJMoving);
 
-        
+
+
+  
+      
+
 };
 
 init();
@@ -195,8 +197,7 @@ init();
     .to(".text-mobile", { opacity :0, x : "-70%" , scale:0 },"<")
     .add(MENUdarkModeActive,"<")
     .to(".text-iptv", { opacity :1, x : "-50%" },"<+=0.3")
-    
-    
+    .add(FUNCTION_worldTitleDisplayTL,"<") 
 
 
     return mainScrollTrigger;
@@ -204,43 +205,41 @@ init();
 
 
   // The world 애니메이션
-  function FUNCTION_titleDisplayTL(){
-
-
+  function FUNCTION_worldTitleDisplayTL(){
+    
     let titleDisplayTl = gsap.timeline({
       scrollTrigger: {
-        trigger: 'section .theWorldContent--playOn',        
-        scrub: 3,  
-        markers : true,
-        start : "top-=100 80%",
-        end : "bottom 80%",
-        duration : 0.8
+        trigger: '.theWorldContent',        
+        scrub: 1,  
+        // markers : true,
+        // start : "top-=100 80%",
+        end : "center center",
+        
 
 
       }
-    });
-    
-    titleDisplayTl.to(".sectionTheWorld", { duration : 1.5, backgroundColor :"#060518" },"<");
-
+    })
+        
     titleDisplayTl.set(".theWorldContent--playOn", {                
-        "clip-path": "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)"
+      "clip-path": "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)"
     })
     
     .to(".theWorldContent--playOn", { 
-    "clip-path": "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)" },">")    
+    "clip-path": "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)" },"<")    
 
     .to(".theWorldContent--playOn", { 
-    "clip-path": "polygon(0% 0%, 45% 0%, 35% 100%, 0% 100%)" },">")
+    "clip-path": "polygon(0% 0%, 45% 0%, 35% 100%, 0% 100%)" },"<")
 
     .to(".theWorldContent--playOn", {
-    "clip-path": "polygon(0% 0%, 85% 0%, 85% 100%, 0% 100%)" },">")
+    "clip-path": "polygon(0% 0%, 85% 0%, 85% 100%, 0% 100%)" },"<")
 
     .to(".theWorldContent--playOn", {
-        "clip-path": "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" },">")
-    .to(".titWorld", { y : 0, duration:0.3, opacity : 1, onComplete : MENUdarkModeRemove})
+        "clip-path": "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" },"<")
+
+    .to(".titWorld", { y : 0, duration:0.3, opacity : 1 })
     .to(".theWorldContent--textInfo p", { y : 0, duration:0.3, opacity : 1 })
-    
-    
+    .add(MENUdarkModeRemove)
+    .add(FUNCTION_recruitTitleDisplayTL)
 
     return titleDisplayTl;
 
@@ -264,33 +263,33 @@ init();
       }
     })
         
-  recruitTitleDisplayTl.set(".recruitContent--playOn", {                
+    recruitTitleDisplayTl.set(".recruitContent--playOn", {                
       "clip-path": "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)"
-  })
-  
-  .to(".recruitContent--playOn", { 
-  "clip-path": "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)" },">")    
+    },"<=0.5")
+    
+    .to(".recruitContent--playOn", { 
+    "clip-path": "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)" },"<")    
 
-  .to(".recruitContent--playOn", { 
-  "clip-path": "polygon(0% 0%, 45% 0%, 35% 100%, 0% 100%)" },">")
+    .to(".recruitContent--playOn", { 
+    "clip-path": "polygon(0% 0%, 45% 0%, 35% 100%, 0% 100%)" },"<")
 
-  .to(".recruitContent--playOn", {
-  "clip-path": "polygon(0% 0%, 85% 0%, 85% 100%, 0% 100%)" },">")
+    .to(".recruitContent--playOn", {
+    "clip-path": "polygon(0% 0%, 85% 0%, 85% 100%, 0% 100%)" },"<")
 
-  .to(".recruitContent--playOn", {
-      "clip-path": "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" },">")
+    .to(".recruitContent--playOn", {
+        "clip-path": "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" },"<")
 
-  .to(".titRecruit", { y : 0, duration:0.5, opacity : 1 })
-  .to(".recruitContent--textInfo p", { y : 0, duration:0.5, opacity : 1 })
+    .to(".titRecruit", { y : 0, duration:0.3, opacity : 1 })
+    .to(".recruitContent--textInfo p", { y : 0, duration:0.3, opacity : 1 })
 
 
-  .to(".recruitEarthWrap--earth", { scale:0.8, duration:1.0, } ,"<=+0.5")
+    .to(".recruitEarthWrap--earth", { scale:0.8, duration:0.5, } ,"<=+0.5")
 
-  .to(".recruitEarthWrap--imgMainLine1", {  opacity: 0.4, height : 434,  duration : 0.5, })
-  .to(".recruitEarthWrap--imgMainLine2", {  opacity: 0.4, scale : 1, duration : 0.5, })
-  .to(".recruitEarthWrap--imgcenterLight", {  opacity: 1, scale : 1, duration : 0.5, })
-  .to(".recruitEarthWrap--gravitySimbol", {  opacity: 1, duration : 0.5, },"<")
-  .to(".recruitBtnWrap li", { opacity: 1, scale : 1,  ease:"power1.in", duration : 0.5, stagger: { from : "center",  amount: 0.5 } },"<") 
+    .to(".recruitEarthWrap--imgMainLine1", {  opacity: 0.4, height : 434,  duration : 0.3, },"<+=0.5")
+    .to(".recruitEarthWrap--imgMainLine2", {  opacity: 0.4, scale : 1, duration : 0.3, },"<+=0.2")
+    .to(".recruitEarthWrap--imgcenterLight", {  opacity: 1, scale : 1, duration : 0.3, },"<")
+    .to(".recruitEarthWrap--gravitySimbol", {  opacity: 1, duration : 0.5, },"<+=0.4")
+    .to(".recruitBtnWrap li", { opacity: 1, scale : 1,  ease:"power1.in", duration : 0.5, stagger: { from : "center",  amount: 0.5 } },"<+=0.5") 
     
 
     return recruitTitleDisplayTl;
@@ -376,7 +375,7 @@ init();
       scrollTrigger: {
         trigger: '.theWorldContent--textInfo',        
         scrub: 3,  
-        // markers : true,
+        markers : true,
         start : "top-=100 80%",
         end : "bottom 80%",
         duration : 0.8
