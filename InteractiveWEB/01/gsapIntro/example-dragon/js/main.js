@@ -24,6 +24,7 @@ function init(){
   master.add( FUNCTION_openingTL);  
   master.add(FUNCTION_imagesBlockST);
   master.add(FUNCTION_theWorldST);
+  master.add(FUNCTION_theWorldbgChangeST);
 
   
     
@@ -159,6 +160,27 @@ init();
 
 
   
+  function FUNCTION_theWorldbgChangeST() { 
+    
+    let theWorldbgChangeST = gsap.timeline({
+
+      scrollTrigger: {
+        trigger: '.sectionTheWorld--title',
+        markers: true,
+        scrub: 1,
+                    
+      }              
+      
+    })
+
+    .to('section.sectionTheWorld', {backgroundColor : "#000"})
+    // .to('.blockFinal--dim', {background : "#000"})
+
+    return theWorldbgChangeST;
+  }
+
+
+
   function FUNCTION_theWorldST() { 
     
     let theWorldST = gsap.timeline({
