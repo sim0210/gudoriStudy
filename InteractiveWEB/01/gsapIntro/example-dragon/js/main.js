@@ -4,12 +4,64 @@ document.addEventListener("DOMContentLoaded", function(){
     window.scrollTo(0,0);
   },100)
   disableScroll();
+
+  // 헤더 액션.
+  $('header').hover(function(e){
+    $(this).addClass('active');
+    $('.subMenu').addClass('active');
+    e.stopPropagation();
+  },function(){
+    $('.subMenu').removeClass('active');
+    $(this).removeClass('active');
+  })
+  
+  $('.subMenu__menu li').hover(function(e){
+    var submenuNumber = $(this).data('submenunumber');
+    $('.menu'+submenuNumber).addClass('active')
+    e.stopPropagation();
+  },function(){    
+    $('[class^=menu]').removeClass('active')
+  })
+
+  $('.langWrap').click(function(){
+    $('.langSubmenu').toggleClass('active');
+    $('.langWrap li i.arrow').toggleClass('active');
+    return false;
+  })
+  
+  $('.familySite').click(function(){
+    $('.familySiteSubmenu').toggleClass('active');
+    $('footer ul.contactWrap li i.arrow').toggleClass('active');
+    return false;
+  })  
+  
+  // top 버튼 액션.
+  $('.btn-top').click(function(){
+    window.scrollTo(0,0);
+    return false;
+  })
+
+
+  // 스크롤 업 다운 체크
+  let lastScroll = document.documentElement.scrollTop || 0
+  document.addEventListener('scroll', function(){
+    let scrollTop = document.documentElement.scrollTop
+    if(scrollTop > lastScroll) {
+      $('.subMenu').removeClass('active');
+      $('.langSubmenu ').removeClass('active');
+      gsap.to('header',{yPercent : -100})
+    } else {
+      gsap.to('header',{yPercent : 0})
+    }
+    lastScroll = scrollTop
+  })
 });
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother, MotionPathPlugin);
 
 // 스크롤 스무터 구동.
 let smoother = ScrollSmoother.create({
+    content: ".wrap",
     smooth: 1,   
     effects: true
   });
@@ -83,6 +135,7 @@ init();
       
     })
     .to(".main", { y: "20%", duration: 0.5, ease: "" },"<")  
+    .to(".btn-top", { opacity: 1, duration: 0.5, ease: "" },"<")  
     .to(".content--videoWrap", { scale : 6, y: "-120%", duration: 0.3, rotate :90, ease: "" },"<")
     .to(".mainNextContent--item2", { top: "12%", duration: 0.5, ease: "" },"<")
     .to(".mainNextContent--item4", { top: "38%", duration: 0.5, ease: "" },"<")

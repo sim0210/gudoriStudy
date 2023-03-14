@@ -28,6 +28,33 @@ document.addEventListener("DOMContentLoaded", function(){
     $('.langWrap li i.arrow').toggleClass('active');
     return false;
   })
+
+  $('.familySite').click(function(){
+    $('.familySiteSubmenu').toggleClass('active');
+    $('footer ul.contactWrap li i.arrow').toggleClass('active');
+    return false;
+  })
+
+    // top 버튼 액션.
+    $('.btn-top').click(function(){
+      window.scrollTo(0,0);
+      return false;
+    })
+  
+
+  // 스크롤 업 다운 체크
+  let lastScroll = document.documentElement.scrollTop || 0
+  document.addEventListener('scroll', function(){
+    let scrollTop = document.documentElement.scrollTop
+    if(scrollTop > lastScroll) {
+      $('.subMenu').removeClass('active');
+      $('.langSubmenu ').removeClass('active');
+      gsap.to('header',{yPercent : -100})
+    } else {
+      gsap.to('header',{yPercent : 0})
+    }
+    lastScroll = scrollTop
+  })  
   
 });
 
@@ -37,7 +64,7 @@ gsap.registerPlugin(ScrollTrigger);
 
   // 스크롤 스무터 구동.
   let smoother = ScrollSmoother.create({
-    content: ".wrap",
+      content: ".wrap",
       smooth: 3,   
       effects: true
   });
@@ -211,7 +238,7 @@ init();
       scrollTrigger: {
         trigger: 'section .theWorldContent--playOn',        
         scrub: 3,  
-        markers : true,
+        // markers : true,
         start : "top-=100 80%",
         end : "bottom 80%",
         duration : 0.8
@@ -255,7 +282,7 @@ init();
       scrollTrigger: {
         trigger: '.recruitContent',        
         scrub: 1,  
-        markers : true,
+        // markers : true,
         // start : "top-=100 80%",
         end: () => "+=" + document.querySelector(".recruitContent").offsetHeight
         

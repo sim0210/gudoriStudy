@@ -69,6 +69,14 @@ body {
   /* overflow: hidden;*/
 }
 
+.btn-top {
+  position: fixed;
+  right: 1%;
+  bottom: 4%;
+  z-index: 99;
+  opacity: 1;
+}
+
 header {
   width: 100%;
   height: 80px;
@@ -464,6 +472,7 @@ footer ul.contactWrap {
   display: -ms-flexbox;
   display: flex;
   height: 100%;
+  position: relative;
 }
 
 footer ul.contactWrap li {
@@ -487,12 +496,70 @@ footer ul.contactWrap li i.arrow {
   right: -35px;
   background: url(../images/lang-arrow.png) no-repeat;
   vertical-align: middle;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+footer ul.contactWrap li i.arrow.active {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
 }
 
 footer ul.contactWrap li.familySite {
   border-bottom: 1px solid rgba(255, 255, 255, 0.6);
   width: 150px;
   position: relative;
+}
+
+footer ul.contactWrap li.familySiteSubmenu {
+  max-height: initial;
+  background: #fff;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  top: 15%;
+  left: 71%;
+  -webkit-transform: translateX(-50%) scaleY(0);
+          transform: translateX(-50%) scaleY(0);
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  margin: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 150px;
+  text-align: center;
+  border-radius: 14px;
+  padding: 12px 0;
+  z-index: 10;
+  border: 1px solid #dddddd;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+
+footer ul.contactWrap li.familySiteSubmenu.active {
+  -webkit-transform: translateX(-50%) scaleY(1);
+          transform: translateX(-50%) scaleY(1);
+}
+
+footer ul.contactWrap li.familySiteSubmenu a {
+  font-size: 15px;
+  color: #000;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+  padding: 2px 0;
+}
+
+footer ul.contactWrap li.familySiteSubmenu a:hover {
+  color: #00a9e7;
+}
+
+footer ul.contactWrap li.familySiteSubmenu a.active {
+  color: #00a9e7;
 }
 
 section {
