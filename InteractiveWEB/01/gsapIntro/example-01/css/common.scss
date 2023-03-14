@@ -62,7 +62,7 @@
 
 body { /* overflow: hidden;*/  }
 
-.btn-top { position: fixed; right: 1%; bottom: 4%; z-index: 99; opacity: 1; }
+.btn-top { position: fixed; right: 1%; bottom: 2%; z-index: 99; opacity: 0; }
 
 header {  
   width: 100%; height: 80px; display: flex; position: fixed; top: 0; z-index: 99; align-items: center; justify-content: space-between; padding: 0 30px;
@@ -161,7 +161,7 @@ header {
         border-left: 1px solid #eeeeee; height: 100%; position: relative; min-width: 170px; width: auto; max-width: 190px; padding-top: 25px;
         a { 
           display: block; text-align: center; padding: 5px 0;
-          span  { text-align: center;  position: relative; color: #000000; font-size: 16px; font-family: 'Pretendard-Regular'; font-weight: bold; padding: 2px 5px;
+          span  { text-align: center;  position: relative; color: #000000; font-size: 16px; font-family: 'Pretendard-Regular';  padding: 2px 5px;
             &:after { content: ""; position: absolute; bottom: 0; width: 0%; transform-origin: 50% 50%; height: 2px; background-color: #00b0f0; left: 50%; transform: translateX(-50%); transition: 0.5s all; }
     
             &:hover { 
@@ -218,7 +218,7 @@ footer {
         max-height: initial; background: #fff; position: absolute; display: flex; top: 15%; left: 71%; transform: translateX(-50%) scaleY(0); transform-origin: top; margin: 0; flex-direction: column; width: 150px; text-align: center; border-radius: 14px; padding: 12px 0; z-index: 10; border: 1px solid #dddddd; transition: 0.3s all;
 
         &.active { transform: translateX(-50%) scaleY(1); }
-        a{ font-size: 15px; color: #000; transition: 0.5s all; padding: 2px 0;
+        a{ font-size: 14px; color: #000; transition: 0.5s all; padding: 2px 0; font-weight: 400;
           &:hover { color: #00a9e7; }
           &.active { color: #00a9e7; }
         }
@@ -249,6 +249,10 @@ section {
     
     .earthWrap { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); height: 1268px; width: 1285px; z-index: 2; z-index: 2; 
       &--backgroundTitle { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); opacity: 0; }
+      &--backgroundTitle1 { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); opacity: 0; }
+      &--backgroundTitle2 { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); opacity: 0; }
+      &--backgroundTitle3 { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); opacity: 0; }
+      &--backgroundTitle4 { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); opacity: 0; }
       &--text1 { position: absolute; left: 50%; top: 32%; transform: translate(-50%,-50%); opacity: 0; }
       &--textGravityGames { position: absolute; left: 50%; top: 38%; transform: translate(-50%,-50%); opacity: 0; }
       &--textInfo1 { position: absolute; left: 50%; top: 45%; transform: translate(-50%,-50%); opacity: 0; p { font-family: "Pretendard-Regular"; font-size: 26px; text-align: center; color: #fff; line-height: 1.5; } }
@@ -280,7 +284,7 @@ section {
       
 
 
-      &--playOn { position: absolute; width: 800px; height: 118px;  left: 50%; top: 44%; transform: translate(-50%,-50%); opacity: 0; text-align: center;
+      &--playOn { position: absolute; width: 800px; height: 118px;  left: 50%; top: 46%; transform: translate(-50%,-50%); opacity: 0; text-align: center;
         i { content: ''; position: relative; display: inline-block; background: url(../images/PLAYON.png) no-repeat; }
         .object1 { width : 30px; height: 100%; display: none; background-position: 0 0; opacity: 1; }
         .object2 { width : 30px; height: 100%; display: none; background-position: -737px 0; opacity: 1; margin-right: 15px; }
@@ -289,13 +293,13 @@ section {
         .textL { width: 98px; height: 100%;    display: none; background-position: -146px 0; opacity: 1; }
         .textA { width: 98px; height: 100%;    display: none; background-position: -251px 0; opacity: 1; }
         .textY { width: 98px; height: 100%;    display: none; background-position: -356px 0; opacity: 1; margin-right: 15px; }
-        .textN { width: 100px; height: 100%;   display: none; background-position: -629px 0; opacity: 1; }
+        .textN { width: 100px; height: 100%; margin-left: 10px;  display: none; background-position: -629px 0; opacity: 1; }
         .cursor { font-size: 80px; color: #fff; font-weight: bold; }
       }
 
 
-      &--with { position: absolute; left: 50%; top: 56%; transform: translate(-50%,-50%); opacity: 0; }
-      &--gravity { position: absolute; left: 50%; top: 64%; transform: translate(-50%,-50%); opacity: 0; }
+      &--with { position: absolute; left: 50%; top: 56%; transform: translate(-50%,-100%); opacity: 0; }
+      &--gravity { position: absolute; left: 50%; top: 64%; transform: translate(-50%,-100%); opacity: 0; }
     }
 
 
@@ -424,7 +428,7 @@ section {
     &__isue { margin: 80px auto 0;  width: 100%; min-height: 470px; position: relative; left: 50%; transform: translateX(-50%); display: flex;     justify-content: space-between;
       
       
-      &__leftBox { width: 48%; position: relative; transition: 0.5s all;
+      &__leftBox { width: 48%; position: relative; transition: 0.5s all; transform:  translateX(-100%);
         .nasdaqWrap { width: 100%; height: 100%; border: 1px solid #46626f; box-sizing: border-box; padding : 65px 80px 65px 0; display: flex; justify-content: flex-end;
           &__content { min-width: 530px; text-align: center;
             p.cost { transition: 0.5s all; margin: 20px 0; font-size: 48px; font-weight: bold; font-family: 'Poppins'; color: #fff; span { font-size: 95px; } }
@@ -529,8 +533,8 @@ section {
       &--earth { position: absolute; left: 50%; top: 88%; transform: translate(-50%, -50%) scale(0.3); z-index: 1; }
       &--gravitySimbol { position: absolute; left: 50%; top: 71%; transform: translate(-50%, -50%) scale(1); z-index: 1; opacity: 0; }
       &--imgMainLine1 { position: absolute; left: 49.4%; bottom: 0%; height: 0; transform: translate(-50%,0%); opacity: 0.7; z-index: 2; }
-      &--imgMainLine2 { position: absolute; left: 50%; top: 63.9%; transform: translate(-50%, -50%) scale(0); transform-origin: 50% 55%; opacity: 0.7; z-index: 2; }
-      &--imgcenterLight { position: absolute; left: 50%; top: 63%; transform: translate(-50%, -50%) scale(0); transform-origin: 50% 50%; opacity: 1; z-index: 2; }
+      &--imgMainLine2 { position: absolute; left: -24.6%; top: 38.5%; transform: scale(0); transform-origin: 50% 55%; opacity: 0.7; z-index: 2; }
+      &--imgcenterLight { position: absolute; left: 14%; top: 32%; transform: scale(0); transform-origin: 50% 50%; opacity: 0; z-index: 2; }
 
       ul.recruitBtnWrap {
         width: 1000px; height: 500px; position: absolute; top: 68%; left: 50%; transform: translate(-50%,-50%); z-index: 5;
@@ -569,3 +573,45 @@ section {
 
 
 #test { position: absolute; z-index: 2; width: 1000; height: 800px; opacity: 0;}
+
+
+
+
+.imgContentBox--onlineEarth-on { opacity: 0; position: absolute; left: 0; }
+.imgContentBox--mobilePhone-on { opacity: 0; position: absolute; left: 0; }
+.imgContentBox--iptv-on { opacity: 0; position: absolute; left: 0; }
+.play_purple { opacity: 1; display: none; position: absolute; left: -32px; top: -28px; z-index: 1; animation: flicker-on 3s infinite forwards; animation-delay: 3s; }
+.play_blue { opacity: 1; display: none; position: absolute; left: -32px; top: -28px; z-index: 1; animation: flicker-on 3s infinite forwards reverse; animation-delay: 4s; }
+
+@keyframes flicker-on {
+  0% {
+    opacity: 0;
+  }
+  49% {
+    opacity: 0;
+  }
+  50% {
+    opacity: .8;
+  }
+  51% {
+    opacity: 0;
+  }
+  75% {
+    opacity: .7
+  }
+  77% {
+    opacity: 0;
+  }
+  78% {
+    opacity: .8;
+  }
+  79% {
+    opacity: 0;
+  }
+  80% {
+    opacity: .7;
+  }
+  100% {
+    opacity: .7;
+  }
+}

@@ -11,8 +11,10 @@ document.addEventListener("DOMContentLoaded", function(){
     $('.subMenu').addClass('active');
     e.stopPropagation();
   },function(){
+    
     $('.subMenu').removeClass('active');
     $(this).removeClass('active');
+    
   })
   
   $('.subMenu__menu li').hover(function(e){
@@ -155,12 +157,12 @@ init();
         scrub: 3,
         pin: true,
                 
-        end: () => "+=" + document.querySelector(".main").offsetHeight*3
+        end: () => "+=" + document.querySelector(".main").offsetHeight*4
       }
               
       
     })
-    .to(".earthWrap--playOn", { y : -180, scale : 0.8, duration : 0.2,})
+    .to(".earthWrap--playOn", { y : -195, scale : 0.8, duration : 0.2,})
     .to(".mainEarth", { scale : 0.6 , duration : 0.2,}, "<")
     
 
@@ -176,13 +178,13 @@ init();
     .to(".earthWrap--textGravityGames", {  opacity: 1, scale : 1, duration : 0.3, },"<")
     .to(".earthWrap--textInfo1", {  opacity: 1,  duration : 0.3, },)
     .to(".alphabet", { left:"50%", top:"60%", width : 100, height : 100, x: "-50%", y: "-50%", ease:"power4.inOut", duration : 0.5, stagger: { amount: 0.1 } }, "<") 
-    .to(".earthWrap--textInfo1", {  opacity: 0,  duration : 0.3, },)
     
     
-    .to(".earthWrap--textInfo2", {  opacity: 1,  duration : 0.3, },)
     .to(".alphabet.leftOut", {  x: "-1000%",  ease:"power4.inOut", opacity :0, duration : 1.2, stagger: { amount: 0.8 } },) 
     .to(".alphabet.rightOut", {  x: "1000%",  ease:"power4.inOut", opacity :0, duration : 1.2, stagger: { amount: 0.8 } }, "<") 
-    .set(".earthWrap--mainCharImgWrap", { opacity : 1 }, "<+=1.0" )
+    .to(".earthWrap--textInfo1", {  opacity: 0,  duration : 0.5, })
+    .to(".earthWrap--textInfo2", {  opacity: 1,  duration : 0.5, })
+    .set(".earthWrap--mainCharImgWrap", { opacity : 1 }, "<+=0.5" )
     .from(".mainSectionImg", { x : "-50%", opacity : 0, ease:"power4.inOut", duration : 0.8, stagger: { amount: 0.8 } }, "<") 
     
     .to(".earthWrap--imgMainLine1", {  opacity: 1, height : 429,  duration : 0.3, },"<+=0.5")
@@ -199,29 +201,38 @@ init();
     .add(MENUdarkModeActive,"<")
     .set(".contentNext", { display : "flex"},"<+=0.7") 
     .to(".contentNext", { opacity:1, scale: 1, duration : 1.0, ease:"none",}, "<") 
+    
     .to(".onlineEarthWrap", { x:0, y:"-50%", scale :1,  duration : 2.0, ease:"none",}, "<")
-    .to(".onlineEarthWrap--power", { scale :1,  duration : 1.0, ease:"bounce.in",},"<")
+    .to(".onlineEarthWrap--power", { scale :1,  duration : 1.0, ease:"", })
+    .to('.imgContentBox--onlineEarth-on', { duration : 0.5, opacity : 1 })
+    
+    
     .from(".objectBox", { scale :0, ease:"bounce.inOut", duration : 0.8, stagger: { amount: 0.8 } }, "<") 
     
     
-    .to(".onlineEarthWrap", { x:"-80%", y:"20%", scale :0, opacity : 0,  duration : 2.0, ease:"none",}) 
-        
-
-    .to(".text-online", { opacity :0, x : "-70%" , scale:0 },"<+=0.3")
-    .to(".mobilePhoneWrap", { x:0, y:"-50%", scale :1, opacity : 1, duration : 2.0, ease:"none",}, "<")
-    .to(".mobilePhoneWrap--power", { scale :1,  duration : 1.0, ease:"bounce.in",}, "<+=0.8")
-    .to(".text-mobile", { opacity :1, x : "-50%" },"<")
+    .to(".onlineEarthWrap", { x:"-80%", y:"20%", scale :0, opacity : 0,  duration : 2.0, ease:"none",})  // 온라인 부분 밑으로 떨어뜨림.        
+    .to(".text-online", { opacity :0, x : "-70%" , scale:0 },"<") // 그와 동시에 온라인 설명도 사라짐
 
 
+    .to(".mobilePhoneWrap", { x:0, y:"-50%", scale :1, opacity : 1, duration : 2.0, ease:"none",}, "<") // 모바일부분 센터정렬
     .to(".iptvWrap", { x:"69%", y:"-114%", scale :0.5,  duration : 2.0, ease:"none",}, "<")
+    .to(".text-mobile", { opacity :1, duration :1, x : "-50%" })
+    .to(".mobilePhoneWrap--power", { scale :1,  duration : 1.0, ease:"",}) // 모바일 파워온
+    .to('.imgContentBox--mobilePhone-on', { duration : 0.5, opacity : 1 }) // 모바일 이미지 활성화
+
+                
+    .to(".mobilePhoneWrap", { x:"-80%", y:"20%", scale :0, opacity : 0,  duration : 2.0, ease:"none",}) // 모바일 부분 밑으로 떨어뜨림.     
+    .to(".text-mobile", { opacity :0, x : "-70%" , scale:0 },"<") // 모바일 설명 없앰
+    .to(".iptvWrap", { x:100, y:"-50%", scale :1, opacity : 1, duration : 2.0, ease:"none",}, "<") // 아이피 티비 센터정렬    
     
-            
-    .to(".mobilePhoneWrap", { x:"-80%", y:"20%", scale :0, opacity : 0,  duration : 2.0, ease:"none",})     
-    .to(".iptvWrap", { x:100, y:"-50%", scale :1, opacity : 1, duration : 1.0, ease:"none",}, "<")
-    .to(".iptvWrap--power", { scale :1,  duration : 1.0, ease:"bounce.in",}, "<+=0.8")
-    .to(".text-mobile", { opacity :0, x : "-70%" , scale:0 },"<")
+    
+    .to(".text-iptv", { opacity :1, duration :1, x : "-50%" })
+    .to(".iptvWrap--power", { scale :1,  duration : 1.0, ease:"",})
+    .to('.imgContentBox--iptv-on', { duration : 0.5, opacity : 1 },"<")
+
+
+    
     .add(MENUdarkModeActive,"<")
-    .to(".text-iptv", { opacity :1, x : "-50%" },"<+=0.3")
     
     
 
@@ -247,7 +258,9 @@ init();
       }
     });
     
-    titleDisplayTl.to(".sectionTheWorld", { duration : 1.5, backgroundColor :"#060518" },"<");
+    titleDisplayTl.to(".contentNext", { duration : 1.0, backgroundColor :"#060518" },"<");
+    titleDisplayTl.to(".text-iptv h1, .text-iptv p", { color : "#fff"},"<");
+    titleDisplayTl.to(".sectionTheWorld", { duration : 1.0, backgroundColor :"#060518" },"<");
 
     titleDisplayTl.set(".theWorldContent--playOn", {                
         "clip-path": "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)"
@@ -310,11 +323,11 @@ init();
   .to(".titRecruit", { y : 0, duration:0.5, opacity : 1 })
   .to(".recruitContent--textInfo p", { y : 0, duration:0.5, opacity : 1 })
 
-
-  .to(".recruitEarthWrap--earth", { scale:0.8, duration:1.0, } ,"<=+0.5")
+  .set('.recruitEarthWrap',{ left:"50%",top : "50%", yPercent : -50, xPercent : -50 })
+  .to(".recruitEarthWrap--earth", { yPercent : -50, xPercent : -50, scale:0.8,  duration:1.0, } ,"<=+0.5")
 
   .to(".recruitEarthWrap--imgMainLine1", {  opacity: 0.4, height : 434,  duration : 0.5, })
-  .to(".recruitEarthWrap--imgMainLine2", {  opacity: 0.4, scale : 1, duration : 0.5, })
+  .to(".recruitEarthWrap--imgMainLine2", {  opacity: 0.4,  scale : 1, duration : 0.5, })
   .to(".recruitEarthWrap--imgcenterLight", {  opacity: 1, scale : 1, duration : 0.5, })
   .to(".recruitEarthWrap--gravitySimbol", {  opacity: 1, duration : 0.5, },"<")
   .to(".recruitBtnWrap li", { opacity: 1, scale : 1,  ease:"power1.in", duration : 0.5, stagger: { from : "center",  amount: 0.5 } },"<") 
@@ -335,14 +348,15 @@ init();
                             
               .set(".box", { scale : 1},"<")
               .from(".box", { opacity: 0, left:"50%", top:"50%", ease:"power1.in", duration : 0.3, stagger: { from : "center",  amount: 0.3 } },"<")  // 흩뿌림
-              
+              .add(FUNCTION_contentOBJMoving)
               .to(".earthWrap--text1", {  opacity: 1, y:50, duration : 0.8, ease: "power1.in" },"<+=0.3")
 
-              .to(".earthWrap--with", {  opacity: 1, y:50, duration : 0.8, ease: "power1.in" },"<+=0.1")
-              .to(".earthWrap--gravity", {  opacity: 1, y:50, duration : 0.8, ease: "power1.in" },"<+=0.1")
+              .to(".earthWrap--with", {  opacity: 1, y: "-50%", duration : 0.8, ease: "power1.in" },"<+=0.1")
+              .to(".earthWrap--gravity", {  opacity: 1, y: "-50%", duration : 0.8, ease: "power1.in" },"<+=0.1")
+              
               .to(".earthWrap--backgroundTitle", {  opacity: 1, duration : 2.5,},"<")
               
-              .set(".earthWrap--playOn", {  opacity: 1, y:50, duration : 0.8, ease: "power1.in" },"<+=1.0")
+              .set(".earthWrap--playOn", {  opacity: 1, y:0, duration : 0.8, ease: "power1.in" },"<+=1.0")
               .add(FUNCTION_playonTL,"<")
               .add(FUNCTION_mainScrollTrigger,"<+=1.5" )
               .add(enableScroll,"<" )
@@ -385,6 +399,8 @@ init();
     .to('.earthWrap--playOn .object2', { display : 'inline-block', duration : 0.2 },"<+=0.2")
     .to('.earthWrap--playOn .cursor', { duration :0.01, opacity : 0, display :'none', scale : 0, color: "rgba(0,0,0,0)", })
     .add(FUNCTION_earthMoving)
+    .to('.play_purple, .play_blue',{display : "block", delay : 1})
+
 
     
 
@@ -446,6 +462,61 @@ init();
   //   }
   // });
 
+
+    // backgroundTitle 애니메이션
+    function FUNCTION_backTitleTL(){
+      let backTitleTL = gsap.timeline({ duration : 5, repeat : -1 })
+      .to('.earthWrap--backgroundTitle',{ display : "none"} )
+      
+      .to('.earthWrap--backgroundTitle1',{ ease : "none", duration : 0.1, opacity : 1} )
+      .to('.earthWrap--backgroundTitle1',{ ease : "none", duration : 0.1, opacity : 0},"<" )
+      
+      .to('.earthWrap--backgroundTitle2',{ ease : "none", duration : 0.1, opacity : 1},"<" )
+      .to('.earthWrap--backgroundTitle2',{ ease : "none", duration : 0.1, opacity : 0},"<" )
+      
+      .to('.earthWrap--backgroundTitle3',{ ease : "none", duration : 0.1, opacity : 1},"<" )
+      .to('.earthWrap--backgroundTitle3',{ ease : "none", duration : 0.1, opacity : 0},"<" )
+      
+      .to('.earthWrap--backgroundTitle4',{ ease : "none", duration : 0.1, opacity : 1},"<" )
+      .to('.earthWrap--backgroundTitle4',{ ease : "none", duration : 0.1, opacity : 0},"<" )
+      .to('.earthWrap--backgroundTitle1',{ ease : "none", duration : 0.1, opacity : 1},"<" )
+
+
+
+      return backTitleTL;
+    }
+
+
+
+  var contentOBJMoving;
+  // main object moving
+  function FUNCTION_contentOBJMoving(){
+    contentOBJMoving = gsap.timeline({ })
+    .to(".box", { y: 20, rotation :-10, ease: "none", duration : 1.5, stagger: { from: "center", each :0.1, repeat : -1, yoyo:true } }) 
+        
+    return contentOBJMoving;
+  }
+
+  
+  
+  // main object moving
+  function FUNCTION_theWorldBoxTL(){    
+
+    const theWorldBoxTL = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.theWorldContent__isue',        
+        scrub: 1,  
+
+        end : "top top"
+
+      }
+    })
+    
+    .to(".theWorldContent__isue__leftBox", { x: "0%", ease: "none", duration : 1.5 }) 
+        
+    return theWorldBoxTL;
+  }
+  FUNCTION_theWorldBoxTL()
 
 
   // play on 랜더링 부분 커서 관련 
